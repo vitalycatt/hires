@@ -30,7 +30,7 @@ export const SearchBar = ({
   return (
     <div
       className={classnames(
-        "flex items-center rounded-lg shadow-sm h-[48px] pl-6 pr-4 p-2 bg-white w-full flex-1",
+        "flex items-center rounded-lg shadow-sm h-[48px] pl-6 pr-4 p-2 bg-white w-full flex-1 sm:px-3",
         className
       )}
     >
@@ -62,7 +62,7 @@ export const SearchBar = ({
           placeholder="Поиск"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
-          className="border-none focus:ring-0 flex-1"
+          className="border-none focus:ring-0 w-full"
         />
 
         <InputRightElement

@@ -13,6 +13,10 @@
   --gray: #60646c;
 }
 
+.react-player video {
+  border-radius: 12px;
+}
+
 input:not(:placeholder-shown) + #placeholder,
 input:focus + #placeholder {
   display: none;

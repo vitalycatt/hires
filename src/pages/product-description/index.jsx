@@ -29,6 +29,7 @@ import VideoImage5 from "../../assets/images/video-content/Video-5.png";
 import VideoImage6 from "../../assets/images/video-content/Video-6.png";
 
 export const CONTENT_TYPE = {
+  REEL: "reel",
   VIDEO: "video",
   AUDIO: "audio",
 };
@@ -573,42 +574,13 @@ export const ProductDescription = () => {
               </div>
             </div>
 
-            <ul className="mt-10 sm:mt-6">
-              <li className="h-[172px] flex items-center justify-between">
-                <form>
-                  <div className="flex items-center">
-                    <Checkbox.Root
-                      className="flex size-5 appearance-none items-center justify-center rounded border border-solid border-[#000932]/10 bg-white outline-none data-[state=checked]:bg-[#1F2D5C]"
-                      checked={checked}
-                      onCheckedChange={() => setChecked((checked) => !checked)}
-                      id="4K"
-                    >
-                      <Checkbox.Indicator className="text-violet11 checked:bg-[#1F2D5C]">
-                        <CheckIcon className="w-6 h-6 text-white" />
-                      </Checkbox.Indicator>
-                    </Checkbox.Root>
-
-                    <label
-                      className="pl-4 font-medium text-xl leading-none text-[#1C2024] sm:text-base"
-                      htmlFor="4K"
-                    >
-                      4K
-                    </label>
-                  </div>
-                </form>
-
-                <div className="ml-[14px] flex items-center text-[#80838D] text-sm">
-                  <div className="">3840 × 2160 пикс.</div>
-
-                  <span className="mx-1">&bull;</span>
-
-                  <div className="">MOV</div>
-                </div>
-
-                <div className="font-medium text-xl text-[#1C2024] sm:text-base">
-                  3 330₽
-                </div>
-              </li>
+            <ul className="h-[172px] mt-10 pr-3 flex flex-col gap-4 overflow-auto sm:mt-6">
+              <ProductItem checked={checked} setChecked={setChecked} />
+              <ProductItem checked={checked} setChecked={setChecked} />
+              <ProductItem checked={checked} setChecked={setChecked} />
+              <ProductItem checked={checked} setChecked={setChecked} />
+              <ProductItem checked={checked} setChecked={setChecked} />
+              <ProductItem checked={checked} setChecked={setChecked} />
             </ul>
 
             <hr className="w-full mt-4 border-solid border border-[#F0F0F3] sm:hidden" />
@@ -674,7 +646,12 @@ export const ProductDescription = () => {
           </div>
         )}
 
-        <Content data={videoData} contentType={CONTENT_TYPE.VIDEO} />
+        <Content
+          videoData={videoData}
+          reelData={reelData}
+          audioData={videoData}
+          contentType={CONTENT_TYPE.REEL}
+        />
       </div>
     </>
   );
@@ -689,7 +666,7 @@ const OverlayButton = ({ buttonUrl, title }) => {
       )}
     >
       {title && (
-        <div className="mr-1.5 font-medium text-[#1C2024]">{title}</div>
+        <div className="mr-1.5 font-medium text-[#1C2024] sm:mr-1">{title}</div>
       )}
 
       <img src={buttonUrl} alt="shoping-cart" />
@@ -712,4 +689,42 @@ const Tags = ({ tags, className }) => (
       ))}
     </ul>
   </div>
+);
+
+const ProductItem = ({ checked, setChecked }) => (
+  <li className="h-[28px] flex items-center justify-between">
+    <form>
+      <div className="flex items-center">
+        <Checkbox.Root
+          className="flex size-5 appearance-none items-center justify-center rounded border border-solid border-[#000932]/10 bg-white outline-none data-[state=checked]:bg-[#1F2D5C]"
+          checked={checked}
+          onCheckedChange={() => setChecked((checked) => !checked)}
+          id="4K"
+        >
+          <Checkbox.Indicator className="text-violet11 checked:bg-[#1F2D5C]">
+            <CheckIcon className="w-6 h-6 text-white" />
+          </Checkbox.Indicator>
+        </Checkbox.Root>
+
+        <label
+          className="pl-4 font-medium text-xl leading-none text-[#1C2024] sm:text-base"
+          htmlFor="4K"
+        >
+          4K
+        </label>
+      </div>
+    </form>
+
+    <div className="ml-[14px] flex items-center text-[#80838D] text-sm">
+      <div className="">3840 × 2160 пикс.</div>
+
+      <span className="mx-1">&bull;</span>
+
+      <div className="">MOV</div>
+    </div>
+
+    <div className="font-medium text-xl text-[#1C2024] sm:text-base">
+      3 330₽
+    </div>
+  </li>
 );

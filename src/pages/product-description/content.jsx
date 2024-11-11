@@ -1,14 +1,18 @@
 import classnames from "classnames";
 import { useState } from "react";
 import { CONTENT_TYPE } from "./";
-import { AudioContentList, VideoContentList } from "../../components";
+import {
+  ReelContentList,
+  VideoContentList,
+  AudioContentList,
+} from "../../components";
 
 const ACTIVE_TAB = {
   VISUALLY_SIMILAR: "visually similar",
   OTHER_WORKS: "other works",
 };
 
-export const Content = ({ data, contentType }) => {
+export const Content = ({ audioData, reelData, videoData, contentType }) => {
   const [activeTab, setActiveTab] = useState(ACTIVE_TAB.OTHER_WORKS);
 
   const windowWidth = window.innerWidth;
@@ -50,11 +54,15 @@ export const Content = ({ data, contentType }) => {
       </div>
 
       {contentType === CONTENT_TYPE.AUDIO && (
-        <AudioContentList data={data} className="mt-10" />
+        <AudioContentList data={audioData} className="mt-10" />
       )}
 
       {contentType === CONTENT_TYPE.VIDEO && (
-        <VideoContentList data={data} className="mt-10" />
+        <VideoContentList data={videoData} className="mt-10" />
+      )}
+
+      {contentType === CONTENT_TYPE.REEL && (
+        <ReelContentList data={reelData} className="mt-10" />
       )}
 
       <div className="hidden w-[150px] h-12 border-solid border-[#CDCED6] border rounded-lg items-center justify-center font-medium cursor-pointer sm:flex sm:mx-auto sm:mb-8 sm:mt-4">

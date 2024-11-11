@@ -37,6 +37,7 @@ function Search({ select, placeholder = "Введите ваш запрос |", 
       >
         <Form className="search__form">
           <SearchSelect selected={selected} setSelected={setSelected} />
+
           <Field
             className="search__input"
             type="text"
@@ -50,6 +51,7 @@ function Search({ select, placeholder = "Введите ваш запрос |", 
           </button>
         </Form>
       </Formik>
+
       {resultsPage && <ResultsLink />}
     </div>
   );
