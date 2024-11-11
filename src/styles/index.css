@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url(./reset.css);
+@import url(./fonts.css);
+
+:root {
+  --white: #fff;
+  --page: #f9f9f9;
+  --black: #1c2024;
+  --blue: #1f2d5c;
+  --gray: #60646c;
+}
+
+input:not(:placeholder-shown) + #placeholder,
+input:focus + #placeholder {
+  display: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9fb;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.container {
+  max-width: 1400px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-m {
+  max-width: 1244px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main {
+  position: relative;
+  overflow: hidden;
+}
+
+.bottom {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottom > * {
+  width: calc(100% / 3);
+}
+
+.bottom::before {
+  content: "";
+  width: calc(100% / 3);
+}
+
+.bottom .pagination {
+  justify-content: center;
+}
+
+.bottom .select {
+  justify-content: end;
+}
+
+@media (max-width: 1000px) {
+  .bottom {
+    justify-content: center;
+  }
+
+  .bottom .select {
+    display: none;
+  }
+
+  .bottom::before {
+    display: none;
+  }
+}

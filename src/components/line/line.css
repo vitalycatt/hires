@@ -1,0 +1,43 @@
+.line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -1px;
+    right: -1px;
+
+    z-index: -1;
+}
+
+.line__inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.line__item {
+    width: 1px;
+    background-color: #E4EBFE;
+}
+
+.line__middle-item {
+    background-image: url(./line.svg);
+    width: 1px;
+    bottom: 0;
+    left: calc(50% + 20px);
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+@media (max-width: 1200px) {
+    .line__middle-item {
+        left: 50%;
+    }
+}
+
+@media (max-width:1400px) {
+    .line__inner {
+        padding: 0;
+    }
+}
