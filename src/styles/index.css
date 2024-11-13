@@ -17,6 +17,10 @@
   border-radius: 12px;
 }
 
+.product-player video {
+  border-radius: 16px;
+}
+
 @layer utilities {
   .nth-item:nth-child(3) {
     @apply mb-3;

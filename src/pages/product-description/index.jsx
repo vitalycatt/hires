@@ -1,12 +1,13 @@
+import { useState } from "react";
 import classnames from "classnames";
 import * as Checkbox from "@radix-ui/react-checkbox";
 import { Header } from "./header";
 import { Button } from "../search-results/button";
 import { Content } from "./content";
-import { useState } from "react";
 import { CheckIcon } from "@radix-ui/react-icons";
 
 import UserImage from "../../assets/images/avatar.png";
+import PlayerVideo from "../../assets/horizontal-video.mp4";
 import PlayerImage from "../../assets/images/player.png";
 import HeartBlackIcon from "../../assets/icons/heart-black.svg";
 import ShareBlackIcon from "../../assets/icons/share-black.svg";
@@ -27,6 +28,7 @@ import VideoImage3 from "../../assets/images/video-content/Video-3.png";
 import VideoImage4 from "../../assets/images/video-content/Video-4.png";
 import VideoImage5 from "../../assets/images/video-content/Video-5.png";
 import VideoImage6 from "../../assets/images/video-content/Video-6.png";
+import { VideoPlayer } from "../../components";
 
 export const CONTENT_TYPE = {
   REEL: "reel",
@@ -509,11 +511,7 @@ export const ProductDescription = () => {
 
         <div className="mt-6 flex gap-12 sm:mt-0">
           <div className="flex-1 flex flex-col sm:hidden">
-            <img
-              src={PlayerImage}
-              alt="player-image"
-              className="w-min-[884px]"
-            />
+            <VideoPlayer url={PlayerVideo} />
 
             <div className="mt-12 flex justify-between">
               <div

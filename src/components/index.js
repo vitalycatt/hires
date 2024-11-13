@@ -1,6 +1,7 @@
 import { Filters } from "./filters";
 import { SearchBar } from "./search-bar";
 import { Pagination } from "./pagination";
+import { VideoPlayer } from "./video-player";
 import { SidebarDialog } from "./sidebar-dialog";
 import { OverlayButton } from "./overlay-button";
 import { FiltersSidebar } from "./filters-sidebar";
@@ -12,6 +13,7 @@ export {
   Filters,
   SearchBar,
   Pagination,
+  VideoPlayer,
   OverlayButton,
   SidebarDialog,
   FiltersSidebar,
