@@ -17,16 +17,40 @@
   border-radius: 12px;
 }
 
+@layer utilities {
+  .nth-item:nth-child(3) {
+    @apply mb-3;
+  }
+
+  .nth-item:nth-child(7) {
+    @apply mb-3;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+  }
+}
+
 input:not(:placeholder-shown) + #placeholder,
 input:focus + #placeholder {
   display: none;
 }
 
-body {
-  font-family: "Roboto", sans-serif;
-}
-
 .App {
+  font-family: "Roboto", sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

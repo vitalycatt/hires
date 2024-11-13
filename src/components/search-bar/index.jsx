@@ -30,7 +30,7 @@ export const SearchBar = ({
   return (
     <div
       className={classnames(
-        "flex items-center rounded-lg shadow-sm h-[48px] pl-6 pr-4 p-2 bg-white w-full flex-1 sm:px-3",
+        "flex items-center rounded-lg h-[48px] pl-6 pr-4 p-2 bg-white w-full flex-1 sm:px-3",
         className
       )}
     >

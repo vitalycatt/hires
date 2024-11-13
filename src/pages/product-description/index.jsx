@@ -490,7 +490,6 @@ const descriptionDetails = [
 ];
 
 export const ProductDescription = () => {
-  const [checked, setChecked] = useState(false);
   const [openDescription, setOpenDescription] = useState(false);
 
   if (!videoData) return null;
@@ -542,7 +541,7 @@ export const ProductDescription = () => {
               running across the Korean Peninsula), South Korea — HD stock video
             </h1>
 
-            <div className="flex items-center text-[#80838D] text-sm">
+            <div className="mt-2 flex items-center text-[#80838D] text-sm">
               <img src={UserImage} alt="user-image" />
 
               <div className="flex items-center ml-1">
@@ -575,24 +574,24 @@ export const ProductDescription = () => {
             </div>
 
             <ul className="h-[172px] mt-10 pr-3 flex flex-col gap-4 overflow-auto sm:mt-6">
-              <ProductItem checked={checked} setChecked={setChecked} />
-              <ProductItem checked={checked} setChecked={setChecked} />
-              <ProductItem checked={checked} setChecked={setChecked} />
-              <ProductItem checked={checked} setChecked={setChecked} />
-              <ProductItem checked={checked} setChecked={setChecked} />
-              <ProductItem checked={checked} setChecked={setChecked} />
+              <ProductItem label="HD" />
+              <ProductItem label="SD" />
+              <ProductItem label="1K" />
+              <ProductItem label="2K" />
+              <ProductItem label="3K" />
+              <ProductItem label="4K" />
             </ul>
 
             <hr className="w-full mt-4 border-solid border border-[#F0F0F3] sm:hidden" />
 
             <div className="mt-4 flex justify-between items-center gap-3 sm:mt-6">
-              <OverlayButton
+              <ProductControls
                 buttonUrl={UploadBlackIcon}
                 title="Скачать превью"
               />
-              <OverlayButton buttonUrl={BookmarkBlackIcon} />
-              <OverlayButton buttonUrl={HeartBlackIcon} />
-              <OverlayButton buttonUrl={ShareBlackIcon} />
+              <ProductControls buttonUrl={BookmarkBlackIcon} />
+              <ProductControls buttonUrl={HeartBlackIcon} />
+              <ProductControls buttonUrl={ShareBlackIcon} />
             </div>
 
             <Button
@@ -633,9 +632,12 @@ export const ProductDescription = () => {
 
             <hr className="w-full mt-6 border-solid border border-[#F0F0F3] sm:hidden" />
 
-            <ul className="grid grid-cols-3 sm:grid-cols-1 sm:mt-6">
+            <ul className="mt-6 grid grid-cols-3 sm:grid-cols-1 sm:mt-6">
               {descriptionDetails.map((detail) => (
-                <li key={detail.label} className="flex items-center text-sm">
+                <li
+                  key={detail.label}
+                  className="flex items-center text-sm sm:nth-item"
+                >
                   <div className="mr-[2px] font-medium">{detail.label}:</div>
                   <div>{detail.value}</div>
                 </li>
@@ -657,7 +659,7 @@ export const ProductDescription = () => {
   );
 };
 
-const OverlayButton = ({ buttonUrl, title }) => {
+const ProductControls = ({ buttonUrl, title }) => {
   return (
     <div
       className={classnames(
@@ -691,15 +693,13 @@ const Tags = ({ tags, className }) => (
   </div>
 );
 
-const ProductItem = ({ checked, setChecked }) => (
+const ProductItem = ({ label }) => (
   <li className="h-[28px] flex items-center justify-between">
     <form>
       <div className="flex items-center">
         <Checkbox.Root
           className="flex size-5 appearance-none items-center justify-center rounded border border-solid border-[#000932]/10 bg-white outline-none data-[state=checked]:bg-[#1F2D5C]"
-          checked={checked}
-          onCheckedChange={() => setChecked((checked) => !checked)}
-          id="4K"
+          id={label}
         >
           <Checkbox.Indicator className="text-violet11 checked:bg-[#1F2D5C]">
             <CheckIcon className="w-6 h-6 text-white" />
@@ -708,9 +708,9 @@ const ProductItem = ({ checked, setChecked }) => (
 
         <label
           className="pl-4 font-medium text-xl leading-none text-[#1C2024] sm:text-base"
-          htmlFor="4K"
+          htmlFor={label}
         >
-          4K
+          {label}
         </label>
       </div>
     </form>

@@ -1,17 +1,15 @@
 import classnames from "classnames";
+import { useState } from "react";
 import { SortedSelect } from "../filters/sorted-select";
 
 import ChevronLeftIcon from "../../assets/icons/chevron-left.svg";
 import ChevronRightIcon from "../../assets/icons/chevron-right.svg";
 
-const BUTTON_COLOR = {
-  PRIMARY: "primary",
-  SECONDARY: "secondary",
-};
-
 const itemsAmountOptions = [48, 64, 96, 120];
 
 export const Pagination = ({ pages }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+
   return (
     <div className="relative mt-10 mb-16 w-full h-12 flex justify-center items-center sm:my-12">
       <button
@@ -25,8 +23,9 @@ export const Pagination = ({ pages }) => {
         {pages.map((page) => (
           <PaginationButton
             key={page}
-            color={BUTTON_COLOR.PRIMARY}
             value={page}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
           />
         ))}
       </div>
@@ -47,20 +46,18 @@ export const Pagination = ({ pages }) => {
   );
 };
 
-const PaginationButton = ({ color, value }) => {
-  return (
-    <button
-      onClick={() => console.log("Go to page")}
-      className={classnames(
-        "h-12 min-w-12 px-[11px] rounded-lg font-medium text-base",
-        {
-          "bg-[#1F2D5C] text-white": color === BUTTON_COLOR.PRIMARY,
-          "border-solid border-[#B9BBC6] border-[1px] text-[#1F2D5C]":
-            color === BUTTON_COLOR.SECONDARY,
-        }
-      )}
-    >
-      {value}
-    </button>
-  );
-};
+const PaginationButton = ({ value, currentPage, setCurrentPage }) => (
+  <button
+    onClick={() => setCurrentPage(value)}
+    className={classnames(
+      "h-12 min-w-12 px-[11px] rounded-lg font-medium text-base transition-all duration-300 hover:bg-opacity-70 active:bg-white active:text-[#1F2D5C]",
+      {
+        "bg-[#1F2D5C] text-white": currentPage === value,
+        "border-solid border-[#B9BBC6] border-[1px] text-[#1F2D5C]":
+          currentPage !== value,
+      }
+    )}
+  >
+    {value}
+  </button>
+);
