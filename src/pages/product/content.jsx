@@ -1,6 +1,6 @@
 import classnames from "classnames";
 import { useState } from "react";
-import { CONTENT_TYPE } from "./";
+import { CONTENT_TYPE } from ".";
 import {
   ReelContentList,
   VideoContentList,

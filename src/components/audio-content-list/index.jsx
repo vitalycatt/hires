@@ -1,9 +1,7 @@
 import classnames from "classnames";
-import { Button } from "../../pages/search-results/button";
+import { Button } from "../button";
 
 import PlayIcon from "../../assets/icons/play.svg";
-import PauseIcon from "../../assets/icons/pause.svg";
-import SpeakerOffIcon from "../../assets/icons/speaker-off.svg";
 import HeartBlackIcon from "../../assets/icons/heart-black.svg";
 import ShareBlackIcon from "../../assets/icons/share-black.svg";
 import SpeakerLoudIcon from "../../assets/icons/speaker-loud.svg";
@@ -11,9 +9,11 @@ import UploadBlackIcon from "../../assets/icons/upload-black.svg";
 import ChevronRightIcon from "../../assets/icons/chevron-right.svg";
 import BookmarkBlackIcon from "../../assets/icons/bookmark-black.svg";
 import ShopingCartBlueIcon from "../../assets/icons/cart-blue.svg";
-import SpeakerModerateIcon from "../../assets/icons/speaker-moderate.svg";
 import EqualizerLargeImage from "../../assets/images/equalizer-large.png";
 import EqualizerSmallImage from "../../assets/images/equalizer-small.png";
+// import PauseIcon from "../../assets/icons/pause.svg";
+// import SpeakerOffIcon from "../../assets/icons/speaker-off.svg";
+// import SpeakerModerateIcon from "../../assets/icons/speaker-moderate.svg";
 
 export const AudioContentList = ({ data, className, sidebarOpen }) => {
   return (

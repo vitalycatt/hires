@@ -1,7 +1,8 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import { Button } from "../../pages/search-results/button";
+import { Button } from "../button";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import { FiltersSidebar } from "../filters-sidebar";
+
 import SettingsIcon from "../../assets/icons/settings.svg";
 
 export const SidebarDialog = () => (

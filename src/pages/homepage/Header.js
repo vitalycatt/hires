@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Sprite from "../../UI/sprite/Sprite";
-import List from "./List";
-import Logo from "./Logo";
+import List from "../../components/header/List";
+import Logo from "../../components/header/Logo";
 import ButtonIcon from "./ButtonIcon";
 import { Link } from "react-router-dom";
 
-import User from "./User";
+import User from "../../components/header/User";
 import "./header.css";
 
 function Header() {

@@ -1,11 +1,11 @@
-import { Button } from "../../pages/search-results/button";
+import { Button } from "../button";
 import { Sorting } from "./sorting";
 import { FiltersList } from "./filters-list";
 import { SidebarDialog } from "../sidebar-dialog";
 
+const filterItems = ["mp4", "Вертикальные", "Редакционный", "Поштучный выкуп"];
 const sortedByOptions = ["новизне", "качеству", "рейтингу"];
 const itemsAmountOptions = [48, 64, 96, 120];
-const filterItems = ["mp4", "Вертикальные", "Редакционный", "Поштучный выкуп"];
 
 export const Filters = ({ setSidebarOpen }) => {
   const onDeleteFilterItem = () => console.log("Filter item delete");

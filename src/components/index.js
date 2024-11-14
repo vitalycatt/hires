@@ -1,3 +1,5 @@
+import { Button } from "./button";
+import { Layout } from "./layout";
 import { Filters } from "./filters";
 import { SearchBar } from "./search-bar";
 import { Pagination } from "./pagination";
@@ -10,6 +12,8 @@ import { VideoContentList } from "./video-content-list";
 import { AudioContentList } from "./audio-content-list";
 
 export {
+  Layout,
+  Button,
   Filters,
   SearchBar,
   Pagination,

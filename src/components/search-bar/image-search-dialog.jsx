@@ -1,6 +1,6 @@
 import classnames from "classnames";
 import * as Dialog from "@radix-ui/react-dialog";
-import { Button } from "../../pages/search-results/button";
+import { Button } from "../button";
 import { Cross2Icon } from "@radix-ui/react-icons";
 
 import CatImage from "../../assets/images/cat.png";
