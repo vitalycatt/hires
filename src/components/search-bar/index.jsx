@@ -30,7 +30,7 @@ export const SearchBar = ({
   return (
     <div
       className={classnames(
-        "flex items-center rounded-lg h-[48px] pl-6 pr-4 p-2 bg-white w-full flex-1 sm:px-3",
+        "flex items-center rounded-lg h-[48px] pl-6 pr-4 p-2 bg-white w-full flex-1 sm:px-3 sm:text-xs",
         className
       )}
     >
@@ -43,11 +43,12 @@ export const SearchBar = ({
           {selectedCategory}
         </MenuButton>
 
-        <MenuList className="bg-white p-3 rounded-md">
+        <MenuList className="absolute top-2 -left-6 w-[175px] py-2 flex flex-col bg-white rounded-xl text-xs leading-4 text-[#1C2024] sm:-left-3">
           {categories.map((category, index) => (
             <MenuItem
               key={index}
               onClick={() => handleCategorySelect(category)}
+              className="py-2 pl-[13px] hover:bg-[#F9F9FB] hover:font-medium"
             >
               {category}
             </MenuItem>

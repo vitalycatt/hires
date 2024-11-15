@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function User({ authorization }) {
   return (
-    <div className="header__wrapper sm:order-2 sm:ml-2">
+    <div className="header__wrapper sm:order-2">
       {authorization ? (
         <button className="header__user">
           <div

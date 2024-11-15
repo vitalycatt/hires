@@ -1,4 +1,5 @@
 import classnames from "classnames";
+import * as Tooltip from "@radix-ui/react-tooltip";
 import * as Checkbox from "@radix-ui/react-checkbox";
 import { Button } from "../../components";
 import { CheckIcon } from "@radix-ui/react-icons";
@@ -39,14 +40,29 @@ export const ProductSelling = () => {
         className="hidden w-full mt-4 sm:block"
       />
 
-      <div className="mt-3 w-[290px] h-9 px-[11.5px] flex justify-center items-center rounded-md bg-[#E8E8EC] sm:w-full sm:mt-4">
+      <div className="mt-6 w-[290px] h-9 px-[11.5px] flex justify-center items-center rounded-md bg-[#E8E8EC] sm:w-full sm:mt-4">
         <p className="text-base text-[#1F2D5C] font-medium">
           Коммерческое использование
         </p>
 
-        <div className="ml-[10px] size-4 flex items-center justify-center rounded-full bg-white">
-          <img src={QuestionMarkIcon} alt="lightning-bolt-icon" />
-        </div>
+        <Tooltip.Provider>
+          <Tooltip.Root>
+            <Tooltip.Trigger asChild>
+              <div className="ml-[10px] size-4 flex items-center justify-center rounded-full bg-white">
+                <img src={QuestionMarkIcon} alt="lightning-bolt-icon" />
+              </div>
+            </Tooltip.Trigger>
+
+            <Tooltip.Portal>
+              <Tooltip.Content
+                className="absolute top-5 left-2 w-[143px] h-[49px] rounded-md bg-[#F9F9FB] transition-opacity duration-300 p-1.5 border border-solid border-[#D9D9E0] text-[10px] leading-[10px] text-[#1C2024]"
+                sideOffset={5}
+              >
+                Описание сюда
+              </Tooltip.Content>
+            </Tooltip.Portal>
+          </Tooltip.Root>
+        </Tooltip.Provider>
       </div>
 
       <ul className="h-[172px] mt-10 pr-3 flex flex-col gap-4 overflow-auto sm:mt-6">

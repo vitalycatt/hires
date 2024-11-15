@@ -34,6 +34,7 @@ const ContentItem = ({ item }) => {
   const handleMouseEnter = () => {
     setIsPlaying(true);
   };
+
   const handleMouseLeave = () => {
     if (playerRef.current) {
       playerRef.current.seekTo(0);

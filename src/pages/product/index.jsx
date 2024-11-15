@@ -64,7 +64,7 @@ export const Product = () => {
 
       <hr className="w-full mt-6 border-solid border border-[#F0F0F3] sm:hidden" />
 
-      <Tags tags={tags} className="hiden mt-8 sm:flex" />
+      <Tags tags={tags} className="hidden mt-8 sm:flex" />
 
       <ProductDescription
         tags={tags}

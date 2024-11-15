@@ -43,16 +43,16 @@ export const ImageSearchDialog = ({
             onClick={() => setUploadImage((hasImage) => !hasImage)}
           >
             {!uploadImage ? (
-              <div className="flex py-[34px] gap-[5px]">
+              <div className="flex py-[34px] gap-[5px] rounded-lg">
                 <p className="text-sm text-[#60646C]">Загрузить</p>
 
                 <img src={UploadIcon} alt="upload-icon" />
               </div>
             ) : (
               <div className="relative group">
-                <img src={CatImage} alt="cat-image" />
+                <img src={CatImage} alt="cat-image" className="rounded-lg" />
 
-                <div className="absolute top-0 left-0 invisible group-hover:visible w-full h-full flex justify-center items-center gap-[5px] bg-[#000]/50">
+                <div className="absolute top-0 left-0 invisible rounded-lg group-hover:visible w-full h-full flex justify-center items-center gap-[5px] bg-[#000]/50">
                   <p className="text-sm text-white">Загрузить другое</p>
 
                   <img src={UploadWhiteIcon} alt="upload-icon" />

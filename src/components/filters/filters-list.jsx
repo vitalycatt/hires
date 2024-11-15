@@ -8,7 +8,7 @@ export const FiltersList = ({ filterItems, onDeleteFilterItem }) => {
           key={item}
           className="h-[36px] pl-[10px] pr-3 flex items-center gap-1 rounded-[6px] bg-[#F0F0F3]"
         >
-          <p className="font-medium leading-5 text-sm">{item}</p>
+          <p className="font-medium leading-5 text-sm text-[#1F2D5C]">{item}</p>
 
           <img
             src={CrossIcon}

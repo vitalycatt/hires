@@ -10,10 +10,13 @@ import {
 export const SortedSelect = ({ options }) => (
   <Select.Root>
     <Select.Trigger
-      className="inline-flex h-[35px] items-center justify-center gap-[5px] rounded px-[15px] text-[13px] leading-none"
+      className="inline-flex h-[35px] items-center justify-center gap-[5px] rounded px-[15px] text-[13px] leading-none font-normal"
       aria-label="Food"
     >
-      <Select.Value placeholder={options[0]} />
+      <Select.Value
+        placeholder={options[0]}
+        className="font-['Roboto'] text-[#60646C] text-sm font-medium"
+      />
 
       <Select.Icon className="text-violet11">
         <ChevronDownIcon />
@@ -26,10 +29,10 @@ export const SortedSelect = ({ options }) => (
           <ChevronUpIcon />
         </Select.ScrollUpButton>
 
-        <Select.Viewport className="p-[5px]">
-          <Select.Group>
+        <Select.Viewport>
+          <Select.Group className="font-['Roboto'] rounded-xl">
             {options.map((option) => (
-              <SelectItem className="capitalize" key={option} value={option}>
+              <SelectItem key={option} value={option}>
                 {option}
               </SelectItem>
             ))}
@@ -49,7 +52,7 @@ const SelectItem = React.forwardRef(
     return (
       <Select.Item
         className={classnames(
-          "relative flex h-[25px] select-none items-center rounded-[3px] pl-[25px] pr-[35px] text-[13px] leading-none text-violet11 data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1 data-[highlighted]:outline-none",
+          "relative flex h-[25px] select-none items-center rounded-[3px] pl-[25px] pr-[35px] text-[13px] text-[#60646C]/60 capitalize leading-none hover:bg-[#F9F9FB] data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1 data-[highlighted]:outline-none",
           className
         )}
         {...props}
