@@ -16,10 +16,10 @@ export const Filters = ({ setSidebarOpen }) => {
         <div className="flex items-center">
           <Button
             title="Фильтры"
-            className="h-[48px] px-6 bg-[#1F2D5C] rounded-lg text-white mr-[23px] sm:hidden"
+            className="group h-[48px] px-6 bg-[#1F2D5C] rounded-lg text-white mr-[23px] sm:hidden"
             onClick={() => setSidebarOpen((open) => !open)}
           >
-            <div className="ml-1 w-[21px] h-[21px] bg-white rounded-full text-black text-[12px] leading-4 font-medium flex items-center justify-center">
+            <div className="ml-1 w-[21px] h-[21px] flex items-center justify-center bg-white rounded-full text-black text-[12px] leading-4 transition-all duration-300 font-medium group-hover:bg-[#1F2D5C] group-hover:text-white">
               {filterItems.length}
             </div>
           </Button>
