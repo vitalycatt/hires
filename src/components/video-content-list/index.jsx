@@ -34,6 +34,7 @@ const VideoItem = ({ item }) => {
   const handleMouseEnter = () => {
     setIsPlaying(true);
   };
+
   const handleMouseLeave = () => {
     if (playerRef.current) {
       playerRef.current.seekTo(0);
