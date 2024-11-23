@@ -7,7 +7,7 @@ export const Layout = () => {
     <div className="flex flex-col items-center">
       <Header />
 
-      <div className="max-w-[1360px]">
+      <div className="max-w-[1360px] md:w-full">
         <Outlet />
       </div>
 
