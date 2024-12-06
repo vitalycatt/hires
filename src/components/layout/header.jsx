@@ -22,7 +22,7 @@ export const Header = () => {
   };
 
   return (
-    <div className="w-screen h-[110px] p-10 flex items-center justify-between sm:flex-col sm:h-[190px]">
+    <div className="container mx-auto h-[110px] p-10 flex items-center justify-between sm:flex-col sm:h-[190px]">
       <div className="w-full flex items-center justify-between">
         <img
           src="../../images/logo-black.svg"

@@ -10,12 +10,7 @@ import { descriptionDetails, reelData, tags, videoData } from "../../data";
 import PlayerVideo from "../../assets/horizontal-video.mp4";
 import ChevronDownIcon from "../../assets/icons/chevron-down.svg";
 import ChevronLeftIcon from "../../assets/icons/chevron-left.svg";
-
-export const CONTENT_TYPE = {
-  REEL: "reel",
-  VIDEO: "video",
-  AUDIO: "audio",
-};
+import { CONTENT_TYPE } from "../../constants";
 
 export const Product = () => {
   const [openDescription, setOpenDescription] = useState(false);
@@ -23,7 +18,7 @@ export const Product = () => {
   if (!videoData) return null;
 
   return (
-    <div className="px-10 flex flex-col gap-[9px] mt-[42px] sm:px-5">
+    <div className="container mx-auto px-10 flex flex-col gap-[9px] mt-[42px] sm:px-5">
       <div className="flex items-center cursor-pointer">
         <img src={ChevronLeftIcon} alt="chevron-left" className="size-5" />
 

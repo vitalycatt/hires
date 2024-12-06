@@ -1,4 +1,3 @@
-import React from "react";
 import Sprite from "../../UI/sprite/Sprite";
 import { Link } from "react-router-dom";
 
@@ -125,17 +124,17 @@ export const Footer = () => (
         <p className="footer__rights">2024. Все права защищены.</p>
         <ul className="footer__socials">
           <li className="footer__social">
-            <a className="footer__social-link" href="/#" alt="social-link">
+            <a className="footer__social-link" href="https://www.youtube.com/" alt="social-link">
               <Sprite icon="yt" width={32} height={32} />
             </a>
           </li>
           <li className="footer__social">
-            <a className="footer__social-link" href="/#" alt="social-link">
+            <a className="footer__social-link" href="https://web.telegram.org/" alt="social-link">
               <Sprite icon="tg" width={32} height={32} />
             </a>
           </li>
           <li className="footer__social">
-            <a className="footer__social-link" href="/#" alt="social-link">
+            <a className="footer__social-link" href="https://www.instagram.com/hiresagency/" alt="social-link">
               <Sprite icon="in" width={32} height={32} />
             </a>
           </li>

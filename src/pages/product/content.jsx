@@ -1,16 +1,11 @@
 import classnames from "classnames";
 import { useState } from "react";
-import { CONTENT_TYPE } from ".";
+import { ACTIVE_TAB, CONTENT_TYPE } from "../../constants";
 import {
   ReelContentList,
   VideoContentList,
   AudioContentList,
 } from "../../components";
-
-const ACTIVE_TAB = {
-  VISUALLY_SIMILAR: "visually similar",
-  OTHER_WORKS: "other works",
-};
 
 export const Content = ({ audioData, reelData, videoData, contentType }) => {
   const [activeTab, setActiveTab] = useState(ACTIVE_TAB.OTHER_WORKS);
@@ -48,7 +43,7 @@ export const Content = ({ audioData, reelData, videoData, contentType }) => {
           </div>
         </div>
 
-        <div className="w-[150px] h-12 border-solid border-[#CDCED6] border rounded-lg flex items-center justify-center font-medium cursor-pointer sm:hidden">
+        <div className="w-[150px] h-12 border-solid border-[#CDCED6] border rounded-lg flex items-center justify-center font-medium cursor-pointer sm:hidden text-[#1C2024]">
           Показать все
         </div>
       </div>

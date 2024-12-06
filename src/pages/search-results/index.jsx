@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { pages, videoData } from "../../data";
+import { pages, reelData, videoData } from "../../data";
 import {
   Filters,
   Pagination,
   FiltersSidebar,
-  VideoContentList,
-  // ReelContentList,
+  // VideoContentList,
+  ReelContentList,
   // AudioContentList,
 } from "../../components";
 
@@ -15,14 +15,14 @@ export const SearchResults = () => {
   if (!videoData) return null;
 
   return (
-    <div className="px-10 flex flex-col">
+    <div className="container mx-auto px-10 flex flex-col text-[#1c2024]">
       <Filters setSidebarOpen={setSidebarOpen} />
 
       <div className="flex gap-[9px] mt-6">
         {sidebarOpen && <FiltersSidebar />}
 
-        <VideoContentList data={videoData} />
-        {/* <ReelContentList data={reelData} /> */}
+        {/* <VideoContentList data={videoData} /> */}
+        <ReelContentList data={reelData} />
         {/* <AudioContentList sidebarOpen={sidebarOpen} data={videoData} /> */}
       </div>
 

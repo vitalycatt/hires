@@ -7,11 +7,16 @@ import ChevronRightIcon from "../../assets/icons/chevron-right.svg";
 
 const itemsAmountOptions = [48, 64, 96, 120];
 
-export const Pagination = ({ pages }) => {
+export const Pagination = ({ pages, className }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   return (
-    <div className="relative mt-10 mb-16 w-full h-12 flex justify-center items-center sm:my-12">
+    <div
+      className={classnames(
+        "relative mt-10 mb-16 w-full h-12 flex justify-center items-center sm:my-12",
+        className
+      )}
+    >
       <button
         onClick={() => console.log("Page -1")}
         className="mr-4 cursor-pointer"
@@ -37,7 +42,7 @@ export const Pagination = ({ pages }) => {
         <img src={ChevronRightIcon} alt="chevron-icon" />
       </button>
 
-      <div className="absolute right-0 -top-[50%] flex items-center font-medium text-sm sm:hidden">
+      <div className="absolute right-0 top-[50%] -translate-y-1/2 flex items-center font-medium text-sm sm:hidden">
         <p>Количество на странице:</p>
 
         <SortedSelect options={itemsAmountOptions} />
