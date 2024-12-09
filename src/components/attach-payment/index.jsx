@@ -1,17 +1,23 @@
+import classnames from "classnames";
 import { Button } from "../../components";
 import { PaymentInput } from "./payment-input";
 
 import MirImage from "../../assets/images/mir.png";
 import CheckedCircleIcon from "../../assets/icons/check-circled.svg";
 
-export const AttachPayment = () => {
+export const AttachPayment = ({ className }) => {
   return (
-    <div className="p-5 flex flex-col bg-white rounded-xl">
+    <div
+      className={classnames(
+        "w-fit p-5 flex flex-col bg-white rounded-xl sm:w-full",
+        className
+      )}
+    >
       <h2 className="font-bold text-[#1C2024] text-xl leading-7 -tracking-[0.1px]">
         Привязать новую карту
       </h2>
 
-      <form className="w-[349px]">
+      <form className="w-[349px] sm:w-full">
         <PaymentInput
           url={MirImage}
           label="Номер карты"
@@ -38,11 +44,11 @@ export const AttachPayment = () => {
         <div className="mt-10 flex flex-col gap-2">
           <Button
             title="Сохранить"
-            className="w-full h-[48px] bg-transparent rounded-lg text-[#3A5BC7] border-[2px] border-solid border-[#3A5BC7] text-base leading-6 font-medium sm:hidden"
+            className="w-full h-[48px] bg-transparent rounded-lg text-[#3A5BC7] border-[2px] border-solid border-[#3A5BC7] text-base leading-6 font-medium"
           />
           <Button
             title="Назад"
-            className="w-full h-[48px] bg-transparent rounded-lg text-[#1C2024] border border-solid border-[#CDCED6] font-medium sm:hidden"
+            className="w-full h-[48px] bg-transparent rounded-lg text-[#1C2024] border border-solid border-[#CDCED6] font-medium"
           />
         </div>
       </form>

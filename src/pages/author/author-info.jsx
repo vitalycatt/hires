@@ -11,49 +11,42 @@ export const AuthorInfo = () => {
 
   return (
     <>
-      <div className="p-5 pr-8 mt-8 flex rounded-xl bg-white">
-        <img src={UserImage} alt="user-image" className="size-[128px]" />
+      <div className="p-5 pr-8 mt-8 flex rounded-xl bg-white md:flex-col md:pr-5 md:mt-0">
+        <img
+          src={UserImage}
+          alt="user-image"
+          className="size-[128px] md:size-[80px]"
+        />
 
-        <div className="ml-5 flex flex-col">
+        <div className="ml-5 flex flex-col md:mt-5 md:ml-0 md:flex-col">
           <div className="flex items-center gap-[9px]">
-            <h1 className="font-bold text-[#1C2024] text-[35px] leading-10 -tracking-[0.16px]">
+            <h1 className="font-bold text-[#1C2024] text-[35px] leading-10 -tracking-[0.16px] md:text-2xl md:leading-[30px]">
               Константин
             </h1>
 
             <img src={TickIcon} alt="tick" className="size-6" />
           </div>
 
-          <div className="mt-[3px] text-lg leading-[26px] text-[#000714]/60">
+          <div className="mt-[3px] text-lg leading-[26px] text-[#000714]/60 md:text-base md:leading-6">
             @constantine
           </div>
 
-          <div className="mt-[9px] flex items-center gap-1 text-[#80838D] text-sm">
+          <div className="mt-[9px] flex items-center gap-1 text-[#80838D] text-sm leading-5">
             938479 материала &#8226; Нижний Новгород
           </div>
         </div>
 
-        {!desc ? (
-          <div className="ml-20 max-w-[550px] leading-6 mt-5 text-[#000714]/60">
-            Зеленый лес. Сказочный лес «Сосны». Нетронутая ель. Лесной узор.
-            Движение камеры в лесу. Коричневая трава на земле. Дрон,
-            перемещающийся между деревьями прекрасным...
-            <div
-              className="ml-2 inline-block cursor-pointer"
-              onClick={() => setDesc((open) => !open)}
-            >
-              <div className="flex items-center gap-1">
-                <p className="text-[#3358D4]">Подробнее</p>
+        <div className="hidden ml-20 max-w-[550px] leading-6 mt-5 text-[#000714]/60 md:m-0 md:mt-4 md:visible">
+          Зеленый лес. Сказочный лес «Сосны». Нетронутая ель. Лесной узор.
+          Движение камеры в лесу. Коричневая трава на земле. Дрон,
+          перемещающийся между деревьями прекрасным, плавным полетом. Солнечные
+          лучи пробиваются сквозь густую листву, создавая игру света и тени.
+          Тишина леса нарушается лишь пением птиц, создавая умиротворяющую
+          атмосферу.
+        </div>
 
-                <img
-                  src={ChevronDownBlueIcon}
-                  alt="chevron-down"
-                  className="size-4"
-                />
-              </div>
-            </div>
-          </div>
-        ) : (
-          <div className="ml-20 max-w-[550px] leading-6 mt-5 text-[#000714]/60">
+        {desc ? (
+          <div className="ml-20 max-w-[550px] leading-6 mt-5 text-[#000714]/60 md:m-0 md:mt-4 md:hidden">
             Зеленый лес. Сказочный лес «Сосны». Нетронутая ель. Лесной узор.
             Движение камеры в лесу. Коричневая трава на земле. Дрон,
             перемещающийся между деревьями прекрасным, плавным полетом.
@@ -75,9 +68,29 @@ export const AuthorInfo = () => {
               </div>
             </div>
           </div>
+        ) : (
+          <div className="ml-20 max-w-[550px] leading-6 mt-5 text-[#000714]/60 md:m-0 md:mt-4 md:hidden">
+            Зеленый лес. Сказочный лес «Сосны». Нетронутая ель. Лесной узор.
+            Движение камеры в лесу. Коричневая трава на земле. Дрон,
+            перемещающийся между деревьями прекрасным...
+            <div
+              className="ml-2 inline-block cursor-pointer"
+              onClick={() => setDesc((open) => !open)}
+            >
+              <div className="flex items-center gap-1">
+                <p className="text-[#3358D4]">Подробнее</p>
+
+                <img
+                  src={ChevronDownBlueIcon}
+                  alt="chevron-down"
+                  className="size-4"
+                />
+              </div>
+            </div>
+          </div>
         )}
 
-        <div className="ml-[110px] w-[180px] flex items-center flex-col gap-3">
+        <div className="ml-auto w-[180px] flex items-center justify-center flex-col gap-3 md:hidden">
           <Button
             title="Поделиться"
             rightIcon={ShareIcon}

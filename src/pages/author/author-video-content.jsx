@@ -3,7 +3,7 @@ import VideoImage1 from "../../assets/images/video-content/Video-1.png";
 import { ReelItem } from "../../components/reel-content-list/reel-item";
 import { VideoItem } from "../../components/video-content-list/video-item";
 
-export const VideoContent = () => {
+export const AuthorVideoContent = () => {
   return (
     <div className="flex flex-col gap-1.5">
       <div className="grid grid-cols-7 gap-1.5 max-h-[333px]">

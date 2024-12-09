@@ -1,3 +1,4 @@
+import classnames from "classnames";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Button } from "../button";
 import { Cross2Icon } from "@radix-ui/react-icons";
@@ -5,10 +6,15 @@ import { FiltersSidebar } from "../filters-sidebar";
 
 import SettingsIcon from "../../assets/icons/settings.svg";
 
-export const SidebarDialog = () => (
+export const SidebarDialog = ({ className }) => (
   <Dialog.Root>
     <Dialog.Trigger asChild>
-      <Button className="h-12 min-w-12 items-center justify-center bg-[#1F2D5C] rounded-lg text-white hidden sm:flex">
+      <Button
+        className={classnames(
+          "h-12 min-w-12 items-center justify-center bg-[#1F2D5C] rounded-lg text-white hidden sm:flex",
+          className
+        )}
+      >
         <img src={SettingsIcon} alt="settings-icon" />
       </Button>
     </Dialog.Trigger>

@@ -1,11 +1,15 @@
-// import { RejectPage } from "./reject-page";
-// import { SuccessPage } from "./success-page";
+import { useState } from "react";
 import { ShoppingCartSection } from "./shopping-cart-section";
 import { contentNavigationData } from "../../data";
+import { SHOPPING_CART_BREAD_CRUMBS } from "../../constants";
 
 import ChevronRightIcon from "../../assets/icons/chevron-right.svg";
 
 export const ShoppingCart = () => {
+  const [breadCrumbs, setBreadCrumbs] = useState(
+    SHOPPING_CART_BREAD_CRUMBS.SHOPPING_CART
+  );
+
   return (
     <div className="container flex-1 mx-auto px-10 flex flex-col sm:px-5">
       <ul className="relative left-1/2 -translate-x-1/2 w-screen h-10 flex justify-center items-center gap-[58px] bg-[#F0F0F3]">

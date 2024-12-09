@@ -1,9 +1,9 @@
 import { Button } from "..";
 import { PaymentInput } from "../attach-payment/payment-input";
+import { SidebarCheckbox } from "../filters-sidebar/sidebar-checkbox";
 
 import MirImage from "../../assets/images/mir.png";
 import CheckedCircleIcon from "../../assets/icons/check-circled.svg";
-import { SidebarCheckbox } from "../filters-sidebar/sidebar-checkbox";
 
 export const CardInput = () => {
   return (

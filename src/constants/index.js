@@ -29,3 +29,23 @@ export const LOGIN_ACTIVE_TAB = {
   LOGIN: "login",
   SIGNIN: "signin",
 };
+
+export const PAYMENT_RADIO_GROUP = {
+  CARD: "card",
+  PAY: "pay",
+  QUICK: "quick",
+};
+
+export const SHOPPING_CART_BREAD_CRUMBS = {
+  SHOPPING_CART: "корзина",
+  PAYMENT: "оплата",
+  DOWNLOAD: "скачать",
+};
+
+export const PROFILE_NAVIGATION = {
+  PROFILE: "Профиль",
+  PLANS: "Планы подписки",
+  PAYMENT: "Платежные данные",
+  SETTINGS: "Настройки",
+  SUPPORT: "Поддержка",
+};

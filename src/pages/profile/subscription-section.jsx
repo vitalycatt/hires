@@ -2,22 +2,33 @@ import classnames from "classnames";
 import { Button } from "../../components";
 import { useState } from "react";
 import { ACTIVE_TAB } from "../../constants";
+import { SidebarItem } from "./profile-sidebar";
 
 import ClocksIcon from "../../assets/icons/clocks.svg";
 import CameraIcon from "../../assets/icons/camera-green.svg";
+import CalendarCheckIcon from "../../assets/icons/calendar-check.svg";
 
 export const SubscriptionSection = () => {
   const [activeTab, setActiveTab] = useState(ACTIVE_TAB.OTHER_WORKS);
 
+  const windowWidth = window.innerWidth;
+
   return (
-    <div className="w-[543px] flex flex-col">
-      <h1 className="mt-[15px] font-bold text-[#1C2024] text-[35px] leading-10 -tracking-[0.16px]">
+    <div className="w-[543px] flex flex-col md:w-full">
+      <SidebarItem
+        url={CalendarCheckIcon}
+        label="Планы подписки"
+        className="border rounded-xl hidden md:flex"
+        iconClassName="rotate-90"
+      />
+
+      <h1 className="mt-[15px] font-bold text-[#1C2024] text-[35px] leading-10 -tracking-[0.16px] md:text-[28px] md:leading-9 md:mt-8">
         Мои подписки
       </h1>
 
-      <div className="mt-8 flex flex-col sm:mt-8 sm:mb-0">
+      <div className="mt-8 flex flex-col sm:mt-[25px]">
         <div className="flex justify-between">
-          <div className="max-w-[880px] flex flex-1 items-center sm:w-full">
+          <div className="max-w-[880px] flex flex-1 items-center md:w-full">
             <div
               className={classnames(
                 "w-full h-10 flex justify-center items-center border-solid border-b-[2px] text-[#000714]/60 border-[#00002F]/20 font-medium text-base leading-6 cursor-pointer sm:h-10 sm:w-full sm:text-base",
@@ -28,7 +39,7 @@ export const SubscriptionSection = () => {
               )}
               onClick={() => setActiveTab(ACTIVE_TAB.OTHER_WORKS)}
             >
-              Активные подписки
+              {windowWidth < 767 ? "Активные" : "Активные подписки"}
             </div>
 
             <div
@@ -41,7 +52,7 @@ export const SubscriptionSection = () => {
               )}
               onClick={() => setActiveTab(ACTIVE_TAB.VISUALLY_SIMILAR)}
             >
-              Архивные подписки
+              {windowWidth < 767 ? "Архивные" : "Архивные подписки"}
             </div>
           </div>
         </div>
@@ -78,7 +89,7 @@ export const SubscriptionSection = () => {
 
             <Button
               title="Возобновить подписку"
-              className="mt-4 w-full h-[48px] px-6 bg-[#1F2D5C] rounded-lg text-[#FFF] font-medium sm:hidden"
+              className="mt-4 w-full h-[48px] px-6 bg-[#1F2D5C] rounded-lg text-[#FFF] font-medium"
             />
           </div>
         ) : (
@@ -119,19 +130,19 @@ export const SubscriptionSection = () => {
               </div>
             </div>
 
-            <div className="font-medium text-sm text-[#3E63DD] leading-5 underline">
+            <div className="mt-4 font-medium text-sm text-[#3E63DD] leading-5 underline">
               Отключить автосписание
             </div>
 
-            <div className="mt-4 w-full flex justify-between gap-4">
+            <div className="mt-4 w-full flex justify-between gap-4 md:flex-col md:gap-2">
               <Button
                 title="Отменить подписку"
-                className="w-full h-[48px] px-6 bg-[#EDF2FE] rounded-lg text-[#1F2D5C] border-none font-medium sm:hidden"
+                className="w-full h-[48px] px-6 bg-[#EDF2FE] rounded-lg text-[#1F2D5C] border-none font-medium"
               />
 
               <Button
                 title="Продлить подписку"
-                className="w-full h-[48px] px-6 bg-[#1F2D5C] rounded-lg text-[#FFF] font-medium sm:hidden"
+                className="w-full h-[48px] px-6 bg-[#1F2D5C] rounded-lg text-[#FFF] font-medium"
               />
             </div>
           </div>

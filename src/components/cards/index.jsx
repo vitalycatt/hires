@@ -1,3 +1,4 @@
+import classnames from "classnames";
 import { Button } from "../button";
 
 import TBankImage from "../../assets/images/t-bank.png";
@@ -6,9 +7,14 @@ import MirGrayImage from "../../assets/images/mir-gray.png";
 import AlfaBankImage from "../../assets/images/alfa-bank.png";
 import SberBankImage from "../../assets/images/sber-bank.png";
 
-export const Cards = () => {
+export const Cards = ({ className }) => {
   return (
-    <div className="w-full p-5 flex flex-col bg-white rounded-xl">
+    <div
+      className={classnames(
+        "w-full p-5 flex flex-col bg-white rounded-xl",
+        className
+      )}
+    >
       <h2 className="font-bold text-[#1C2024] text-xl leading-7 -tracking-[0.1px]">
         Мои карты
       </h2>

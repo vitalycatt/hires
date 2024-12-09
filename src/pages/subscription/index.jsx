@@ -1,4 +1,5 @@
-// import { useState } from "react";
+import { useState } from "react";
+import { PAYMENT_RADIO_GROUP } from "../../constants";
 import { SubscriptionPayment } from "./subscription-payment";
 import { contentNavigationData } from "../../data";
 
@@ -6,6 +7,7 @@ import ChevronRightIcon from "../../assets/icons/chevron-right.svg";
 
 export const Subscription = () => {
   // const [toggle, setToggle] = useState(false);
+  const [radioGroup, setRadioGroup] = useState(PAYMENT_RADIO_GROUP.PAY);
 
   return (
     <div className="container flex-1 mx-auto px-10 flex flex-col sm:px-5">
@@ -36,7 +38,10 @@ export const Subscription = () => {
       <SubscriptionForMore /> */}
 
       {/* FIRST VIEW OF SUBSCRIPTION PAGE */}
-      <SubscriptionPayment />
+      <SubscriptionPayment
+        radioGroup={radioGroup}
+        setRadioGroup={setRadioGroup}
+      />
 
       {/* SUCCESS AND REJECT PAGES */}
       {/* <SuccessPage /> */}

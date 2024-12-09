@@ -1,26 +1,35 @@
 import classnames from "classnames";
 import { Button } from "../../components";
 import { useState } from "react";
+import { SidebarItem } from "./profile-sidebar";
 import { CHAT_STATUS, SUPPORT_ACTIVE_TAB } from "../../constants";
 
 import SendIcon from "../../assets/icons/send.svg";
-import PlusIcon from "../../assets/icons/plus-blue.svg";
+import PlusIcon from "../../assets/icons/plus.svg";
 import SearchIcon from "../../assets/icons/search.svg";
 import FileAttachIcon from "../../assets/icons/file-attach.svg";
 import UserAvatarImage from "../../assets/images/avatar.png";
+import ChatTooltipIcon from "../../assets/icons/chat-tooltip.svg";
 
 export const SupportSection = () => {
   const [activeTab, setActiveTab] = useState(SUPPORT_ACTIVE_TAB.ALL);
 
   return (
     <div className="w-full flex flex-col">
-      <div className="mt-[11px] flex items-center justify-between">
-        <h1 className="font-bold text-[#1C2024] text-[35px] leading-10 -tracking-[0.16px]">
+      <SidebarItem
+        url={ChatTooltipIcon}
+        label="Поддержка"
+        className="border rounded-xl hidden md:flex"
+        iconClassName="rotate-90"
+      />
+
+      <div className="mt-[11px] flex items-center justify-between sm:flex-col sm:items-start md:mt-8">
+        <h1 className="font-bold text-[#1C2024] text-[35px] leading-10 -tracking-[0.16px] md:text-[28px] md:leading-9">
           Чат поддержки
         </h1>
 
-        <div className="flex items-center">
-          <div className="flex justify-between">
+        <div className="flex items-center sm:w-full">
+          <div className="flex justify-between lg:hidden">
             <div className="flex flex-1 items-center sm:w-full">
               <div
                 className={classnames(
@@ -79,15 +88,15 @@ export const SupportSection = () => {
           <Button
             title="Создать обращение"
             rightIcon={PlusIcon}
-            className="ml-5 h-[48px] px-5 bg-[#1F2D5C] rounded-lg text-[#FFF] font-medium sm:hidden"
+            className="ml-5 h-[48px] px-5 bg-[#1F2D5C] rounded-lg text-[#FFF] font-medium sm:ml-0 sm:mt-8 sm:w-full"
           />
         </div>
       </div>
 
-      <div className="mt-7 flex gap-10">
+      <div className="mt-7 flex gap-10 sm:flex-col sm:mt-3">
         <Chat />
 
-        <div className="w-[257px] flex flex-col">
+        <div className="max-w-[257px] w-full flex flex-col sm:order-1 sm:max-w-full">
           <div className="h-12 w-full px-[15px] flex items-center bg-white rounded-lg">
             {/* Поле ввода */}
             <input
@@ -102,7 +111,7 @@ export const SupportSection = () => {
             </button>
           </div>
 
-          <div className="mt-8 flex flex-col">
+          <div className="mt-8 flex flex-col sm:flex-row sm:overflow-scroll sm:mt-6 sm:gap-6">
             {[
               {
                 status: "На рассмотрении",
@@ -151,7 +160,7 @@ export const SupportSection = () => {
 
 const Chat = () => {
   return (
-    <div className="h-[630px] flex flex-col flex-1 rounded-xl bg-white border border-solid border-[#E1E9FF]">
+    <div className="h-[630px] flex flex-col flex-1 rounded-xl bg-white border border-solid border-[#E1E9FF] sm:order-2">
       <div className="p-8 pb-5 font-medium text-[#1C2024] text-xl leading-7">
         Обращение № 73542
       </div>
@@ -240,7 +249,7 @@ const ChatUser = ({ message, className, url }) => {
 
 const ChatItem = ({ status, date, id }) => {
   return (
-    <div className="group mt-4 flex flex-col items-start gap-[2px] first:mt-0 opacity-60 cursor-pointer">
+    <div className="group mt-4 flex flex-col items-start gap-[2px] first:mt-0 opacity-60 cursor-pointer sm:min-w-[191px] sm:mt-0">
       <div className="font-medium text-[#1C2024] text-base leading-6">
         Обращение № {id}
       </div>
@@ -259,7 +268,7 @@ const ChatItem = ({ status, date, id }) => {
         </span>
       </div>
 
-      <hr className="mt-4 w-full border border-solid border-[#F0F0F3] group-last:invisible" />
+      <hr className="mt-4 w-full border border-solid border-[#F0F0F3] group-last:invisible sm:hidden" />
     </div>
   );
 };

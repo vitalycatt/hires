@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FiltersList } from "../../components/filters/filters-list";
 import { CONTENT_TYPE } from "../../constants";
 import { SearchFilters } from "./search-filters";
+import { AuthorVideoContent } from "./author-video-content";
 import { pages, tags, videoData } from "../../data";
 import {
   Button,
@@ -10,8 +11,8 @@ import {
   SidebarDialog,
   FiltersSidebar,
   AudioContentList,
+  VideoContentList,
 } from "../../components";
-import { VideoContent } from "./video-content";
 
 const sortedByOptions = ["новизне", "качеству", "рейтингу"];
 const itemsAmountOptions = [48, 64, 96, 120];
@@ -23,7 +24,7 @@ export const AuthorFilters = ({ contentType }) => {
 
   return (
     <div className="mt-6 flex flex-col items-start">
-      <div className="flex items-center justify-between w-full">
+      <div className="flex items-center justify-between w-full lg:hidden">
         <div className="flex items-center gap-3">
           <div className="flex items-center">
             <Button
@@ -47,19 +48,30 @@ export const AuthorFilters = ({ contentType }) => {
         />
       </div>
 
-      <div className="mt-5 flex justify-between">
-        <FiltersList
-          filterItems={tags}
-          onDeleteFilterItem={onDeleteFilterItem}
-        />
+      <div className="w-full mt-5 flex justify-between lg:flex-col lg:mt-0">
+        <div className="hidden mb-[10px] items-center gap-1 text-[#80838D] text-sm leading-5 lg:flex lg:visible">
+          938479 материала
+        </div>
 
-        <SidebarDialog />
+        <div className="flex justify-between">
+          <FiltersList
+            filterItems={tags}
+            onDeleteFilterItem={onDeleteFilterItem}
+          />
+
+          <SidebarDialog className="lg:flex" />
+        </div>
       </div>
 
-      <div className="flex gap-[9px] mt-6">
+      <VideoContentList
+        data={videoData}
+        className="hidden mt-10 md:visible md:grid md:grid-cols-1"
+      />
+
+      <div className="flex gap-[9px] mt-6 md:hidden">
         {sidebarOpen && <FiltersSidebar />}
 
-        {CONTENT_TYPE.VIDEO === contentType && <VideoContent />}
+        {CONTENT_TYPE.VIDEO === contentType && <AuthorVideoContent />}
 
         {CONTENT_TYPE.AUDIO === contentType && (
           <AudioContentList sidebarOpen={sidebarOpen} data={videoData} />

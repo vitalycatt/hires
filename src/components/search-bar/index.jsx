@@ -71,7 +71,11 @@ export const SearchBar = ({
           cursor="pointer"
           className="flex justify-center items-center"
         >
-          <img src={SearchIcon} alt="search-icon" className="py-[3px]" />
+          <img
+            src={SearchIcon}
+            alt="search-icon"
+            className="py-[3px] sm:pt-0"
+          />
         </InputRightElement>
       </InputGroup>
     </div>

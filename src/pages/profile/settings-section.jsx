@@ -1,17 +1,26 @@
 import { Button } from "../../components";
 import { FormInput } from "./form-input";
+import { SidebarItem } from "./profile-sidebar";
 import { SidebarCheckbox } from "../../components/filters-sidebar/sidebar-checkbox";
 
+import GearIcon from "../../assets/icons/gear.svg";
 import PencilIcon from "../../assets/icons/pencil.svg";
 
 export const SettingsSection = () => {
   return (
     <div className="w-full flex flex-col">
-      <h1 className="mt-[15px] font-bold text-[#1C2024] text-[35px] leading-10 -tracking-[0.16px]">
+      <SidebarItem
+        url={GearIcon}
+        label="Настройки"
+        className="border rounded-xl hidden md:flex"
+        iconClassName="rotate-90"
+      />
+
+      <h1 className="mt-[15px] font-bold text-[#1C2024] text-[35px] leading-10 -tracking-[0.16px] md:text-[28px] md:leading-9 md:mt-8">
         Настройки
       </h1>
 
-      <form className="w-[543px] flex flex-col mt-8 gap-6">
+      <form className="max-w-[543px] w-full flex flex-col mt-8 gap-6 md:max-w-full">
         <FormInput label="Телефон" url={PencilIcon} />
         <FormInput label="Почта" url={PencilIcon} />
       </form>
@@ -56,8 +65,8 @@ export const SettingsSection = () => {
           Изменение пароля
         </h2>
 
-        <form className="mt-6 w-[543px] flex flex-col gap-6">
-          <div className="w-full flex justify-between items-center">
+        <form className="mt-6 max-w-[543px] w-full flex flex-col gap-6 md:max-w-full">
+          <div className="w-full flex justify-between items-center sm:flex-col sm:items-start sm:gap-2">
             <label
               htmlFor="Текущий пароль"
               className=" text-[#1C2024] text-xs leading-4"
@@ -65,7 +74,7 @@ export const SettingsSection = () => {
               Текущий пароль
             </label>
 
-            <div className="w-[426px] h-12 px-4 flex items-center justify-between border border-solid border-[#000932]/10 bg-white/90 rounded-lg">
+            <div className="w-[426px] h-12 px-4 flex items-center justify-between border border-solid border-[#000932]/10 bg-white/90 rounded-lg md:w-full">
               <input
                 id="Текущий пароль"
                 type="text"
@@ -81,7 +90,7 @@ export const SettingsSection = () => {
             </div>
           </div>
 
-          <div className="w-full flex justify-between items-center">
+          <div className="w-full flex justify-between items-center sm:flex-col sm:items-start sm:gap-2">
             <label
               htmlFor="Новый пароль"
               className=" text-[#1C2024] text-xs leading-4"
@@ -89,7 +98,7 @@ export const SettingsSection = () => {
               Новый пароль
             </label>
 
-            <div className="w-[426px] h-12 px-4 flex items-center justify-between border border-solid border-[#000932]/10 bg-white/90 rounded-lg">
+            <div className="w-[426px] h-12 px-4 flex items-center justify-between border border-solid border-[#000932]/10 bg-white/90 rounded-lg md:w-full">
               <input
                 id="Новый пароль"
                 type="text"
@@ -107,7 +116,7 @@ export const SettingsSection = () => {
 
           <Button
             title="Изменить пароль"
-            className="mt-2 w-full h-[48px] px-6 bg-[#1F2D5C] rounded-lg text-[#FFF] font-medium sm:hidden"
+            className="mt-2 w-full h-[48px] px-6 bg-[#1F2D5C] rounded-lg text-[#FFF] font-medium"
           />
         </form>
       </div>
@@ -126,7 +135,7 @@ export const SettingsSection = () => {
 
         <Button
           title="Удалить аккаунт"
-          className="mt-6 max-w-[314px] h-[64px] px-[85px] bg-transparent rounded-lg border-[#CDCED6] text-[#E5484D] font-medium sm:hidden"
+          className="mt-6 max-w-[314px] h-[64px] px-[85px] bg-transparent rounded-lg border-[#CDCED6] text-[#E5484D] font-medium sm:max-w-full"
         />
       </div>
     </div>

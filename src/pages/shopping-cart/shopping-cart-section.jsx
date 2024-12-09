@@ -1,11 +1,15 @@
-// import { useState } from "react";
-// import { LOGIN_ACTIVE_TAB } from "../../constants";
-import { PaymentType, ShoppingCartPayment } from "../../components";
+import {
+  CardInput,
+  PaymentRadioGroup,
+  ShoppingCartPayment,
+} from "../../components";
 
 import ArrowRightIcon from "../../assets/icons/arrow-right.svg";
 import CheckedGreenBgIcon from "../../assets/icons/checked-green-bg.svg";
+import { PAYMENT_RADIO_GROUP } from "../../constants";
+import { InvoicePayment } from "../subscription/invoice-payment";
 
-export const ShoppingCartSection = () => {
+export const ShoppingCartSection = ({ radioGroup, setRadioGroup }) => {
   // const [loginActiveTab, setLoginActiveTab] = useState(LOGIN_ACTIVE_TAB.LOGIN);
 
   return (
@@ -37,16 +41,20 @@ export const ShoppingCartSection = () => {
       </div>
 
       <div className="mt-10 mb-[64px] w-full flex justify-between gap-4">
-        <PaymentType />
+        <PaymentRadioGroup
+          radioGroup={radioGroup}
+          setRadioGroup={setRadioGroup}
+        />
         {/* <Login
           title='Корзина'
           loginActiveTab={loginActiveTab}
           setLoginActiveTab={setLoginActiveTab}
         /> */}
 
-        {/* <AttachPayment /> */}
+        {radioGroup === PAYMENT_RADIO_GROUP.CARD && <CardInput />}
         {/* <Cards /> */}
-        {/* <CardInput /> */}
+        {/* <AttachPayment /> */}
+        {radioGroup === PAYMENT_RADIO_GROUP.PAY && <InvoicePayment />}
 
         <ShoppingCartPayment />
       </div>
