@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { RejectPage } from "./reject-page";
 import { ShoppingCartSection } from "./shopping-cart-section";
 import { contentNavigationData } from "../../data";
 import {
@@ -38,16 +37,16 @@ export const ShoppingCart = () => {
         <div className="font-medium text-[#202020] text-sm">Корзина</div>
       </div>
 
-      {/* <ShoppingCartSection
+      <ShoppingCartSection
         radioGroup={radioGroup}
         setRadioGroup={setRadioGroup}
-      /> */}
+      />
 
       {/* SUCCESS PAGE */}
       {/* <SuccessPage /> */}
 
       {/* REJECT PAGE */}
-      <RejectPage />
+      {/* <RejectPage /> */}
     </div>
   );
 };

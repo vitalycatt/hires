@@ -30,7 +30,7 @@ export const PaymentSection = () => {
         <PaymentItem url={TBankImage} />
       </ul>
 
-      <div className="w-full p-5 mt-8 flex flex-col bg-white rounded-xl">
+      <div className="hidden w-full p-5 mt-8 flex-col bg-white rounded-xl sm:flex">
         <ul className="flex flex-col gap-2">
           <MobilePaymentItem url={TBankImage} />
           <MobilePaymentItem url={SberBankImage} />

@@ -109,6 +109,7 @@ const MonthPlan = ({ url, title, materialPrice, price }) => {
             "!bg-[#E1E9FF] !border-[#C1D0FF]": PLAN_TYPE.MULTI === title,
           }
         )}
+        style={{ boxShadow: "0px 6px 6px 0px rgba(255, 255, 255, 0.5) inset" }}
       >
         <img src={url} alt="camera-icon" />
       </div>
@@ -154,7 +155,12 @@ const MonthPlan = ({ url, title, materialPrice, price }) => {
         <ExcludedOption optionText="Простая отмена" />
       </div>
 
-      <hr className="w-full mt-4 border border-solid border-[#F0F0F3]" />
+      <hr
+        className={classnames(
+          "w-full mt-4 border border-solid border-[#F0F0F3]",
+          { "border-[#0044FF]/20": PLAN_TYPE.MULTI === title }
+        )}
+      />
 
       <div className="mt-4 flex items-end text-lg text-[#000000]/60 leading-[26px]">
         <div className="font-bold text-[35px] text-[#1C2024] leading-10">
@@ -167,10 +173,17 @@ const MonthPlan = ({ url, title, materialPrice, price }) => {
         loginActiveTab={loginActiveTab}
         setLoginActiveTab={setLoginActiveTab}
       >
-        <Button
-          title="Оформить подписку"
-          className="w-full mt-4 py-[11px] bg-[#EDF2FE] border-[#EDF2FE] rounded-lg font-medium text-base leading-6 text-[#1F2D5C]"
-        />
+        {PLAN_TYPE.MULTI !== title ? (
+          <Button
+            title="Оформить подписку"
+            className="w-full mt-4 py-[11px] bg-[#EDF2FE] border-[#EDF2FE] rounded-lg font-medium text-base leading-6 text-[#1F2D5C]"
+          />
+        ) : (
+          <Button
+            title="Оформить подписку"
+            className="w-full mt-4 py-[11px] bg-[#1F2D5C] border-[#EDF2FE] rounded-lg font-medium text-base leading-[26px] text-[#FFFFFF]"
+          />
+        )}
       </LoginDialog>
     </li>
   );
@@ -199,6 +212,7 @@ const YearPlan = ({ url, title, materialPrice, saleMaterialPrice, price }) => {
             "!bg-[#E1E9FF] !border-[#C1D0FF]": PLAN_TYPE.MULTI === title,
           }
         )}
+        style={{ boxShadow: "0px 6px 6px 0px rgba(255, 255, 255, 0.5) inset" }}
       >
         <img src={url} alt="camera-icon" />
       </div>
@@ -247,7 +261,12 @@ const YearPlan = ({ url, title, materialPrice, saleMaterialPrice, price }) => {
         <IncludedOption optionText="Простая отмена" />
       </div>
 
-      <hr className="w-full mt-4 border border-solid border-[#F0F0F3]" />
+      <hr
+        className={classnames(
+          "w-full mt-4 border border-solid border-[#F0F0F3]",
+          { "border-[#0044FF]/20": PLAN_TYPE.MULTI === title }
+        )}
+      />
 
       <div className="mt-4 flex items-end text-lg text-[#000000]/60 leading-[26px]">
         <div className="font-bold text-[35px] text-[#1C2024] leading-10">
@@ -260,10 +279,17 @@ const YearPlan = ({ url, title, materialPrice, saleMaterialPrice, price }) => {
         loginActiveTab={loginActiveTab}
         setLoginActiveTab={setLoginActiveTab}
       >
-        <Button
-          title="Оформить подписку"
-          className="w-full mt-4 py-[11px] bg-[#EDF2FE] border-[#EDF2FE] rounded-lg font-medium text-base leading-6 text-[#1F2D5C]"
-        />
+        {PLAN_TYPE.MULTI !== title ? (
+          <Button
+            title="Оформить подписку"
+            className="w-full mt-4 py-[11px] bg-[#EDF2FE] border-[#EDF2FE] rounded-lg font-medium text-base leading-6 text-[#1F2D5C]"
+          />
+        ) : (
+          <Button
+            title="Оформить подписку"
+            className="w-full mt-4 py-[11px] bg-[#1F2D5C] border-[#EDF2FE] rounded-lg font-medium text-base leading-[26px] text-[#FFFFFF]"
+          />
+        )}
       </LoginDialog>
 
       <div className="absolute top-6 right-6 py-1.5 px-[8.5px] font-medium text-sm leading-5 text-[#000714]/60 border border-solid border-[#E8E8EC] bg-[#FFFFFF] rounded-lg">
