@@ -1,3 +1,4 @@
+import * as Tooltip from "@radix-ui/react-tooltip";
 import classnames from "classnames";
 import { Button } from "../../components";
 import { useState } from "react";
@@ -10,6 +11,7 @@ import CameraIcon from "../../assets/icons/camera-green.svg";
 import DisplayIcon from "../../assets/icons/display-blue.svg";
 import PictureIcon from "../../assets/icons/picture-green.svg";
 import CheckedBlueIcon from "../../assets/icons/checked-blue-active.svg";
+import QuestionMarkIcon from "../../assets/icons/question-mark.svg";
 
 const PLAN_TYPE = {
   VIDEO: "Видео",
@@ -20,7 +22,7 @@ const PLAN_TYPE = {
 
 export const SubscriptionPlans = ({ toggle }) => {
   return (
-    <ul className="mt-[64px] grid grid-cols-4">
+    <ul className="mt-[64px] grid grid-cols-4 sm:mt-6 sm:grid-cols-1">
       {toggle ? (
         <>
           <YearPlan
@@ -88,15 +90,23 @@ const MonthPlan = ({ url, title, materialPrice, price }) => {
   const [loginActiveTab, setLoginActiveTab] = useState(LOGIN_ACTIVE_TAB.LOGIN);
 
   return (
-    <li className="max-w-[310px] p-6 flex flex-col bg-[#FDFDFE] border border-solid border-[#F0F0F3] rounded-2xl hover:border-[#ABBDF9]">
+    <li
+      className={classnames(
+        "max-w-[310px] w-full p-6 flex flex-col bg-[#FDFDFE] border border-solid border-[#F0F0F3] rounded-2xl sm:max-w-full sm:mt-4 sm:first:mt-0",
+        {
+          "bg-gradient-to-b from-[#D2DEFF]/60 via-[#ABC2FF]/60 to-[#7B9EFF]/70 border-dashed border-[#ABBDF9]":
+            PLAN_TYPE.MULTI === title,
+        }
+      )}
+    >
       <div
         className={classnames(
           "flex justify-center items-center size-12 bg-white rounded-lg",
           {
-            "bg-[#EEF6D6] border-[#E2F0BD]": PLAN_TYPE.VIDEO === title,
-            "bg-[#FEE9F5] border-[#FBDCEF]": PLAN_TYPE.MUSIC === title,
-            "bg-[#E0F8F3] border-[#CCF3EA]": PLAN_TYPE.PICTURE === title,
-            "bg-[#E1E9FF] border-[#C1D0FF]": PLAN_TYPE.MULTI === title,
+            "!bg-[#EEF6D6] !border-[#E2F0BD]": PLAN_TYPE.VIDEO === title,
+            "!bg-[#FEE9F5] !border-[#FBDCEF]": PLAN_TYPE.MUSIC === title,
+            "!bg-[#E0F8F3] !border-[#CCF3EA]": PLAN_TYPE.PICTURE === title,
+            "!bg-[#E1E9FF] !border-[#C1D0FF]": PLAN_TYPE.MULTI === title,
           }
         )}
       >
@@ -104,8 +114,29 @@ const MonthPlan = ({ url, title, materialPrice, price }) => {
       </div>
 
       <div className="mt-8 flex flex-col">
-        <h3 className="font-bold text-2xl leading-[30px] text-[#1C2024]">
+        <h3 className="flex items-center font-bold text-2xl leading-[30px] text-[#1C2024]">
           {title}
+
+          {PLAN_TYPE.MULTI === title && (
+            <Tooltip.Provider>
+              <Tooltip.Root>
+                <Tooltip.Trigger asChild>
+                  <div className="ml-2 size-4 flex items-center justify-center rounded-full bg-[#00002D]/10">
+                    <img src={QuestionMarkIcon} alt="lightning-bolt-icon" />
+                  </div>
+                </Tooltip.Trigger>
+
+                <Tooltip.Portal>
+                  <Tooltip.Content
+                    className="absolute top-5 left-2 w-[160px] px-[10px] py-1.5 rounded-md bg-[#F9F9FB] transition-opacity duration-300 p-1.5 border border-solid border-[#D9D9E0] text-[10px] leading-[10px] text-[#1C2024]"
+                    sideOffset={5}
+                  >
+                    Любые материалы на выбор
+                  </Tooltip.Content>
+                </Tooltip.Portal>
+              </Tooltip.Root>
+            </Tooltip.Provider>
+          )}
         </h3>
 
         <div className="mt-2 text-lg text-[#000000]/60 leading-[26px]">
@@ -149,15 +180,23 @@ const YearPlan = ({ url, title, materialPrice, saleMaterialPrice, price }) => {
   const [loginActiveTab, setLoginActiveTab] = useState(LOGIN_ACTIVE_TAB.LOGIN);
 
   return (
-    <li className="relative max-w-[310px] p-6 flex flex-col bg-[#FDFDFE] border border-solid border-[#F0F0F3] rounded-2xl hover:border-[#ABBDF9]">
+    <li
+      className={classnames(
+        "relative max-w-[310px] w-full p-6 flex flex-col bg-[#FDFDFE] border border-solid border-[#F0F0F3] rounded-2xl hover:border-[#ABBDF9] sm:max-w-full sm:mt-4 sm:first:mt-0",
+        {
+          "bg-gradient-to-b from-[#D2DEFF]/60 via-[#ABC2FF]/60 to-[#7B9EFF]/70 border-dashed border-[#ABBDF9]":
+            PLAN_TYPE.MULTI === title,
+        }
+      )}
+    >
       <div
         className={classnames(
           "flex justify-center items-center size-12 bg-white rounded-lg",
           {
-            "bg-[#EEF6D6] border-[#E2F0BD]": PLAN_TYPE.VIDEO === title,
-            "bg-[#FEE9F5] border-[#FBDCEF]": PLAN_TYPE.MUSIC === title,
-            "bg-[#E0F8F3] border-[#CCF3EA]": PLAN_TYPE.PICTURE === title,
-            "bg-[#E1E9FF] border-[#C1D0FF]": PLAN_TYPE.MULTI === title,
+            "!bg-[#EEF6D6] !border-[#E2F0BD]": PLAN_TYPE.VIDEO === title,
+            "!bg-[#FEE9F5] !border-[#FBDCEF]": PLAN_TYPE.MUSIC === title,
+            "!bg-[#E0F8F3] !border-[#CCF3EA]": PLAN_TYPE.PICTURE === title,
+            "!bg-[#E1E9FF] !border-[#C1D0FF]": PLAN_TYPE.MULTI === title,
           }
         )}
       >
@@ -165,8 +204,29 @@ const YearPlan = ({ url, title, materialPrice, saleMaterialPrice, price }) => {
       </div>
 
       <div className="mt-8 flex flex-col">
-        <h3 className="font-bold text-2xl leading-[30px] text-[#1C2024]">
+        <h3 className="flex items-center font-bold text-2xl leading-[30px] text-[#1C2024]">
           {title}
+
+          {PLAN_TYPE.MULTI === title && (
+            <Tooltip.Provider>
+              <Tooltip.Root>
+                <Tooltip.Trigger asChild>
+                  <div className="ml-2 size-4 flex items-center justify-center rounded-full bg-[#00002D]/10">
+                    <img src={QuestionMarkIcon} alt="lightning-bolt-icon" />
+                  </div>
+                </Tooltip.Trigger>
+
+                <Tooltip.Portal>
+                  <Tooltip.Content
+                    className="absolute top-5 left-2 w-[160px] px-[10px] py-1.5 rounded-md bg-[#F9F9FB] transition-opacity duration-300 p-1.5 border border-solid border-[#D9D9E0] text-[10px] leading-[10px] text-[#1C2024]"
+                    sideOffset={5}
+                  >
+                    Любые материалы на выбор
+                  </Tooltip.Content>
+                </Tooltip.Portal>
+              </Tooltip.Root>
+            </Tooltip.Provider>
+          )}
         </h3>
 
         <div className="mt-2 flex items-start gap-2 font-medium text-lg text-[#30A46C] leading-[26px]">

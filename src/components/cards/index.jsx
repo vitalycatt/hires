@@ -11,7 +11,7 @@ export const Cards = ({ className }) => {
   return (
     <div
       className={classnames(
-        "w-full p-5 flex flex-col bg-white rounded-xl",
+        "max-w-[389px] w-full p-5 flex flex-col bg-white rounded-xl",
         className
       )}
     >

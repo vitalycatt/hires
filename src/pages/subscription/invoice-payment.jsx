@@ -1,11 +1,17 @@
 import * as Dialog from "@radix-ui/react-dialog";
+import classnames from "classnames";
 import { Button } from "../../components";
 
 import CrossIcon from "../../assets/icons/cross.svg";
 
-export const InvoicePayment = () => {
+export const InvoicePayment = ({ className }) => {
   return (
-    <div className="max-w-[390px] max-h-[164px] p-5 flex flex-1 flex-col rounded-xl bg-white">
+    <div
+      className={classnames(
+        "max-w-[390px] min-w-[200px] w-full max-h-[164px] p-5 flex flex-1 flex-col rounded-xl bg-white",
+        className
+      )}
+    >
       <h1 className="font-bold text-[#1C2024] text-xl leading-7 -tracking-[0.16px]">
         Оплата по счету
       </h1>

@@ -1,3 +1,4 @@
+import classnames from "classnames";
 import { Button } from "..";
 import { PaymentInput } from "../attach-payment/payment-input";
 import { SidebarCheckbox } from "../filters-sidebar/sidebar-checkbox";
@@ -5,14 +6,19 @@ import { SidebarCheckbox } from "../filters-sidebar/sidebar-checkbox";
 import MirImage from "../../assets/images/mir.png";
 import CheckedCircleIcon from "../../assets/icons/check-circled.svg";
 
-export const CardInput = () => {
+export const CardInput = ({ className }) => {
   return (
-    <div className="p-5 flex flex-col bg-white rounded-xl">
+    <div
+      className={classnames(
+        "max-w-[389px] w-full p-5 flex flex-col bg-white rounded-xl",
+        className
+      )}
+    >
       <h2 className="font-bold text-[#1C2024] text-xl leading-7 -tracking-[0.1px]">
         Банковская карта
       </h2>
 
-      <form className="w-[349px]">
+      <form className="w-full">
         <PaymentInput
           url={MirImage}
           label="Номер карты"

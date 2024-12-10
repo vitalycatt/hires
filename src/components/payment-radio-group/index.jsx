@@ -7,9 +7,14 @@ import SpbImage from "../../assets/images/spb.png";
 import YandexImage from "../../assets/images/yandex.png";
 import MirBankImage from "../../assets/images/mir.png";
 
-export const PaymentRadioGroup = ({ radioGroup, setRadioGroup }) => {
+export const PaymentRadioGroup = ({ className, radioGroup, setRadioGroup }) => {
   return (
-    <div className="min-w-[628px] min-h-[373px] p-5 flex flex-col rounded-xl bg-white sm:p-5 sm:pr-3">
+    <div
+      className={classnames(
+        "max-w-[628px] w-full min-h-[373px] p-5 flex flex-col rounded-xl bg-white sm:p-5 sm:pr-3",
+        className
+      )}
+    >
       <h1 className="font-medium text-[#1C2024] text-[20px] leading-7 -tracking-[0.16px]">
         Выберите способ оплаты
       </h1>

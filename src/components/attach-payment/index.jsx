@@ -9,7 +9,7 @@ export const AttachPayment = ({ className }) => {
   return (
     <div
       className={classnames(
-        "w-fit p-5 flex flex-col bg-white rounded-xl sm:w-full",
+        "max-w-[389px] w-full p-5 flex flex-col bg-white rounded-xl sm:w-full",
         className
       )}
     >
@@ -17,7 +17,7 @@ export const AttachPayment = ({ className }) => {
         Привязать новую карту
       </h2>
 
-      <form className="w-[349px] sm:w-full">
+      <form className="w-full">
         <PaymentInput
           url={MirImage}
           label="Номер карты"

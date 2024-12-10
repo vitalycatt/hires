@@ -1,8 +1,14 @@
+import classnames from "classnames";
 import { Button } from "../button";
 
-export const ShoppingCartPayment = ({ shoppingButton = true }) => {
+export const ShoppingCartPayment = ({ shoppingButton = true, className }) => {
   return (
-    <div className="min-w-[310px] h-fit p-5 flex flex-col rounded-xl bg-white sm:p-5 sm:pr-3">
+    <div
+      className={classnames(
+        "min-w-[310px] h-fit p-5 flex flex-col rounded-xl bg-white sm:p-5 sm:pr-3",
+        className
+      )}
+    >
       <h1 className="font-bold text-[#1C2024] text-xl leading-7 -tracking-[0.16px]">
         Корзина
       </h1>

@@ -5,16 +5,16 @@ import CheckedIcon from "../../assets/icons/checked-blue.svg";
 
 export const SubscriptionForMore = () => {
   return (
-    <div className="my-[64px] px-[98px] py-[64px] w-full flex flex-col items-center bg-[#FDFDFE] border border-solid border-[#F0F0F3] rounded-2xl">
-      <h1 className="font-bold text-[#1C2024] text-[35px] leading-10 -tracking-[0.16px]">
+    <div className="my-[64px] px-[98px] py-[64px] w-full flex flex-col items-center bg-[#FDFDFE] border border-solid border-[#F0F0F3] rounded-2xl sm:px-0 sm:py-0 sm:border-none sm:bg-transparent">
+      <h1 className="font-bold text-[#1C2024] text-[35px] leading-10 -tracking-[0.16px] sm:text-[28px] sm:leading-[36px]">
         Нужно больше материалов в подписке?
       </h1>
 
-      <div className="mt-3 text-center text-xl leading-7 text-[#000714]/60">
+      <div className="mt-3 text-center text-xl leading-7 text-[#000714]/60 sm:text-base sm:leading-6 sm:mt-6">
         Свяжитесь с нами для индивидуального предложения.
       </div>
 
-      <div className="mt-12 w-full flex gap-[64px]">
+      <div className="mt-12 w-full flex gap-[64px] sm:mt-6 sm:gap-8 sm:flex-col">
         <div className="flex flex-col gap-2 flex-1">
           <Option optionText="Любое количество материалов от 10-ти под ваши задачи" />
           <Option optionText="Варианты лицензий под любое использование" />
@@ -54,7 +54,7 @@ const Option = ({ optionText }) => {
     <div className="flex items-start">
       <img src={CheckedIcon} alt="checked-blue-icon" className="mt-2" />
 
-      <div className="ml-[11px] font-medium text-lg text-[#1F2D5C] leading-[26px]">
+      <div className="ml-[11px] font-medium text-lg text-[#1F2D5C] leading-[26px] sm:text-base sm:leading-6">
         {optionText}
       </div>
     </div>

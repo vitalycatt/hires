@@ -1,5 +1,6 @@
 import * as Select from "@radix-ui/react-select";
 import * as Tooltip from "@radix-ui/react-tooltip";
+import classnames from "classnames";
 
 import CrossIcon from "../../assets/icons/cross.svg";
 import FullScreenIcon from "../../assets/icons/enter-full-screen.svg";
@@ -28,23 +29,45 @@ const cartData = [
   },
 ];
 
-export const ShoppingCartList = () => {
-  return (
-    <ul className="w-full flex flex-col items-stretch gap-2 rounded-xl">
-      {cartData.map((product, index) => (
-        <ListItem key={index} product={product} />
-      ))}
-    </ul>
-  );
-};
+export const ShoppingCartList = () => (
+  <ul className="w-full flex flex-col items-stretch gap-2 rounded-xl sm:gap-4">
+    {cartData.map((product, index) => (
+      <ListItem key={index} product={product} />
+    ))}
+  </ul>
+);
 
 const ListItem = ({ product }) => {
   return (
-    <li className="relative flex rounded-xl bg-white sm:p-5 sm:pr-3">
+    <li className="relative flex rounded-xl bg-white md:p-5 md:flex-col">
+      <div className="w-full flex">
+        <ProductImage product={product} />
+
+        <div className="w-full flex py-5 pl-8 pr-[38px] items-start md:p-0 md:ml-4">
+          <ProductDescription product={product} />
+
+          <ProductControls className="md:hidden" />
+        </div>
+      </div>
+
+      <MobileProductControls className="" />
+
+      <img
+        src={CrossIcon}
+        alt="cross-icon"
+        className="absolute top-7 right-7 size-4 cursor-pointer md:ml-0 md:hidden"
+      />
+    </li>
+  );
+};
+
+const ProductImage = ({ className, product }) => {
+  return (
+    <div className={classnames("relative", className)}>
       <img
         src={product.url}
         alt="cart-product"
-        className="max-w-[222px] rounded-l-xl sm:w-[84px] sm:h-[60px] md:rounded-md"
+        className="max-w-[222px] h-full rounded-l-xl md:rounded-md md:w-[117px] md:h-[83px]"
       />
 
       <div className="absolute left-[7px] top-[3px] sm:hidden">
@@ -67,60 +90,131 @@ const ListItem = ({ product }) => {
           </Tooltip.Root>
         </Tooltip.Provider>
       </div>
-
-      <div className="w-full pt-5 pr-[30px] pb-[18px] pl-8 flex justify-between md:ml-4 sm:p-0">
-        <div className="flex flex-col">
-          <h5 className="max-w-[280px] text-sm font-medium text-[#1C2024]">
-            {product.title}
-          </h5>
-
-          <div className="flex items-center gap-1 mt-1 text-sm text-[#80838D]">
-            <div>Видео</div>
-
-            <span>&#8226;</span>
-
-            <div className="list-disc">ID {product.id}</div>
-          </div>
-
-          <div className="flex mt-3 text-sm text-[#80838D]">{product.type}</div>
-
-          <div className="flex items-center gap-1 mt-1 text-sm text-[#80838D]">
-            <div>{product.resolution}</div>
-
-            <span>&#8226;</span>
-
-            <div className="list-disc">{product.format}</div>
-          </div>
-        </div>
-
-        <div className="h-8 flex items-center">
-          <div className="">
-            <ProductSelect placeholder="HD" value="HD" />
-          </div>
-
-          <div className="ml-10 ">
-            <ProductSelect placeholder="Персональная" value="Персональная" />
-          </div>
-
-          <div className="ml-10 font-bold text-lg text-[#1C2024] leding-[26px]">
-            10 500 ₽
-          </div>
-
-          <img
-            src={CrossIcon}
-            alt="cross-icon"
-            className="ml-5 size-4 cursor-pointer"
-          />
-        </div>
-      </div>
-    </li>
+    </div>
   );
 };
 
-const ProductSelect = ({ placeholder, value }) => {
+const ProductDescription = ({ className, product }) => {
+  return (
+    <div className={classnames("w-full flex flex-col", className)}>
+      <h5 className="max-w-[280px] text-sm font-medium text-[#1C2024]">
+        {product.title}
+      </h5>
+
+      <div className="flex items-center gap-1 mt-1 text-sm text-[#80838D]">
+        <div>Видео</div>
+
+        <span>&#8226;</span>
+
+        <div className="list-disc">ID {product.id}</div>
+      </div>
+
+      <div className="flex mt-3 text-sm text-[#80838D]">{product.type}</div>
+
+      <div className="flex items-center gap-1 mt-1 text-sm text-[#80838D]">
+        <div>{product.resolution}</div>
+
+        <span>&#8226;</span>
+
+        <div className="list-disc">{product.format}</div>
+      </div>
+
+      <div className="hidden mt-1 w-[96px] font-bold text-2xl text-[#1C2024] leading-[30px] md:block">
+        10 500 ₽
+      </div>
+    </div>
+  );
+};
+
+const ProductControls = ({ className }) => {
+  return (
+    <div
+      className={classnames(
+        "w-full h-8 flex justify-between items-center gap-10 xl:gap-2",
+        className
+      )}
+    >
+      <div className="md:w-full">
+        <ProductSelect
+          placeholder="HD"
+          value="HD"
+          className="md:w-full md:justify-between"
+        />
+      </div>
+
+      <div className="md:w-full">
+        <ProductSelect
+          placeholder="Персональная"
+          value="Персональная"
+          className="md:w-full md:justify-between"
+        />
+      </div>
+
+      <div className="w-[96px] font-bold text-lg text-[#1C2024] leding-[26px] md:hidden">
+        10 500 ₽
+      </div>
+    </div>
+  );
+};
+
+const MobileProductControls = ({ className }) => {
+  return (
+    <div
+      className={classnames(
+        "hidden w-full mt-5 h-fit flex-col justify-between gap-6 md:flex",
+        className
+      )}
+    >
+      <div className="w-full flex flex-col gap-3">
+        <label
+          htmlFor="Персональная"
+          className="text-sm text-[#1C2024] leading-5"
+        >
+          Лицензия
+        </label>
+
+        <ProductSelect
+          placeholder="HD"
+          value="HD"
+          className="md:w-full md:justify-between"
+        />
+      </div>
+
+      <div className="w-full flex flex-col gap-3">
+        <label
+          htmlFor="Персональная"
+          className="text-sm text-[#1C2024] leading-5"
+        >
+          Лицензия
+        </label>
+
+        <ProductSelect
+          placeholder="Персональная"
+          value="Персональная"
+          className="md:w-full md:justify-between"
+        />
+      </div>
+
+      <div className="flex items-center cursor-pointer">
+        <img src={CrossIcon} alt="cross-icon" />
+
+        <div className="ml-[5px] text-sm text-[#1C2024] leading-5 underline">
+          Удалить
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const ProductSelect = ({ placeholder, value, className }) => {
   return (
     <Select.Root>
-      <Select.Trigger className="h-8 flex items-center pl-3 pr-[10px] bg-[#f3f3f7] rounded-[4px] text-xs leading-4 text-[#1C2024]">
+      <Select.Trigger
+        className={classnames(
+          "h-8 flex items-center pl-3 pr-[10px] bg-[#f3f3f7] rounded-[4px] text-xs leading-4 text-[#1C2024]",
+          className
+        )}
+      >
         <Select.Value placeholder={placeholder} />
 
         <Select.Icon className="ml-6">

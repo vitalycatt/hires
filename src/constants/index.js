@@ -49,3 +49,8 @@ export const PROFILE_NAVIGATION = {
   SETTINGS: "Настройки",
   SUPPORT: "Поддержка",
 };
+
+export const SIGNUP_USERS = {
+  INDIVIDUAL: "Физическое лицо",
+  LEGAL_ENTITY: "Юридическое лицо",
+};
