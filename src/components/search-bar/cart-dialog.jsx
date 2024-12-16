@@ -33,7 +33,7 @@ export const CartDialog = ({ cartProducts }) => (
   <Dialog.Root>
     <Dialog.Trigger asChild>
       <button className="relative w-10 h-10 p-[10px] ml-3 flex items-center justify-center rounded-full bg-white">
-        <img src={CartIcon} alt="cart-icon" />
+        <img src={CartIcon} alt="cart-icon" className="size-5" />
 
         <div className="absolute -bottom-1.5 -right-1.5 h-4 w-4 flex justify-center items-center rounded-full bg-[#DC3E42] font-medium text-[8px] text-white">
           {cartProducts.length || 0}

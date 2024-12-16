@@ -21,7 +21,7 @@ export const ProductDescription = ({
         <img src={ChevronDownIcon} alt="chevron-down" className="size-4" />
       </div>
 
-      <hr className="w-full mt-4 border-solid border border-[#F0F0F3] hidden sm:block text-[#1C2024]" />
+      <hr className="w-full mt-4 border-solid -border border-[#F0F0F3] hidden sm:block text-[#1C2024]" />
 
       {openDescription && (
         <div className="flex flex-col">
@@ -35,7 +35,7 @@ export const ProductDescription = ({
             </div>
           </div>
 
-          <hr className="w-full mt-6 border-solid border border-[#F0F0F3] sm:hidden text-[#1C2024]" />
+          <hr className="w-full mt-6 border-solid -border border-[#F0F0F3] sm:hidden text-[#1C2024]" />
 
           <ul className="mt-6 grid grid-cols-3 sm:grid-cols-1 sm:mt-6">
             {descriptionDetails.map((detail) => (

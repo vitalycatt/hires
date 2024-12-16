@@ -1,7 +1,6 @@
 import classnames from "classnames";
 import { useState } from "react";
 import { ShoppingCartList } from "./shopping-cart-list";
-import { Login, MobileLogin } from "./login";
 import {
   LOGIN_ACTIVE_TAB,
   PAYMENT_RADIO_GROUP,
@@ -9,10 +8,12 @@ import {
 } from "../../constants";
 import {
   Cards,
+  Login,
   CardInput,
+  MobileLogin,
+  AttachPayment,
   PaymentRadioGroup,
   ShoppingCartPayment,
-  AttachPayment,
 } from "../../components";
 
 import ArrowRightIcon from "../../assets/icons/arrow-right.svg";
@@ -20,10 +21,10 @@ import CheckedGreenBgIcon from "../../assets/icons/checked-green-bg.svg";
 
 export const ShoppingCartSection = ({ radioGroup, setRadioGroup }) => {
   const [auth, setAuth] = useState(false);
+  const [loginActiveTab, setLoginActiveTab] = useState(LOGIN_ACTIVE_TAB.LOGIN);
   const [signUpRadioGroup, setSignUpRadioGroup] = useState(
     SIGNUP_USERS.INDIVIDUAL
   );
-  const [loginActiveTab, setLoginActiveTab] = useState(LOGIN_ACTIVE_TAB.LOGIN);
 
   return (
     <div className="mt-10 w-full flex flex-col">
@@ -52,14 +53,16 @@ export const ShoppingCartSection = ({ radioGroup, setRadioGroup }) => {
       {!auth ? (
         <div className="mt-10 mb-[64px] w-full flex justify-between gap-4">
           <Login
-            title="Корзина"
+            auth={auth}
+            setAuth={setAuth}
             loginActiveTab={loginActiveTab}
             setLoginActiveTab={setLoginActiveTab}
             onClick={() => setAuth(true)}
             className="md:hidden"
           />
           <MobileLogin
-            title="Корзина"
+            auth={auth}
+            setAuth={setAuth}
             loginActiveTab={loginActiveTab}
             signUpRadioGroup={signUpRadioGroup}
             setLoginActiveTab={setLoginActiveTab}

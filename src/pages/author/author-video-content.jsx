@@ -7,7 +7,7 @@ import VideoImage1 from "../../assets/images/video-content/Video-1.png";
 export const AuthorVideoContent = () => {
   return (
     <div className="flex flex-col gap-1.5">
-      <div className="grid grid-cols-7 gap-1.5 h-full max-h-[333px]">
+      <div className="grid grid-cols-7 gap-1.5 h-full max-h-[335px]">
         <div className="col-span-1 row-span-1 h-full w-full">
           <ReelVertical />
         </div>
@@ -47,7 +47,7 @@ export const AuthorVideoContent = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-7 gap-1.5 max-h-[333px]">
+      <div className="grid grid-cols-7 gap-1.5 max-h-[335px]">
         <div className="col-span-3 row-span-1 h-full">
           <LargeVideoHorizontal />
         </div>

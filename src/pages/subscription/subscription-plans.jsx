@@ -157,8 +157,8 @@ const MonthPlan = ({ url, title, materialPrice, price }) => {
 
       <hr
         className={classnames(
-          "w-full mt-4 border border-solid border-[#F0F0F3]",
-          { "border-[#0044FF]/20": PLAN_TYPE.MULTI === title }
+          "w-full mt-4 -border border-solid border-[#F0F0F3]",
+          { "!border-[#0044FF]/20": PLAN_TYPE.MULTI === title }
         )}
       />
 
@@ -181,7 +181,7 @@ const MonthPlan = ({ url, title, materialPrice, price }) => {
         ) : (
           <Button
             title="Оформить подписку"
-            className="w-full mt-4 py-[11px] bg-[#1F2D5C] border-[#EDF2FE] rounded-lg font-medium text-base leading-[26px] text-[#FFFFFF]"
+            className="w-full mt-4 py-[11px] bg-[#1F2D5C] border-[#1F2D5C] rounded-lg font-medium text-base leading-[26px] text-[#FFFFFF]"
           />
         )}
       </LoginDialog>
@@ -263,8 +263,8 @@ const YearPlan = ({ url, title, materialPrice, saleMaterialPrice, price }) => {
 
       <hr
         className={classnames(
-          "w-full mt-4 border border-solid border-[#F0F0F3]",
-          { "border-[#0044FF]/20": PLAN_TYPE.MULTI === title }
+          "w-full mt-4 -border border-solid border-[#F0F0F3]",
+          { "!border-[#0044FF]/20": PLAN_TYPE.MULTI === title }
         )}
       />
 
@@ -287,7 +287,7 @@ const YearPlan = ({ url, title, materialPrice, saleMaterialPrice, price }) => {
         ) : (
           <Button
             title="Оформить подписку"
-            className="w-full mt-4 py-[11px] bg-[#1F2D5C] border-[#EDF2FE] rounded-lg font-medium text-base leading-[26px] text-[#FFFFFF]"
+            className="w-full mt-4 py-[11px] bg-[#1F2D5C] border-[#1F2D5C] rounded-lg font-medium text-base leading-[26px] text-[#FFFFFF]"
           />
         )}
       </LoginDialog>
@@ -305,7 +305,7 @@ const IncludedOption = ({ optionText }) => {
       <img
         src={CheckedBlueIcon}
         alt="checked-blue-icon"
-        className="mt-2 size-[10px]"
+        className="mt-1.5 size-[10px]"
       />
 
       <div className="ml-[13px] font-medium text-sm text-[#3E63DD] leading-5">
@@ -318,7 +318,7 @@ const IncludedOption = ({ optionText }) => {
 const ExcludedOption = ({ optionText }) => {
   return (
     <div className="flex items-start">
-      <img src={CrossIcon} alt="cross-icon" className="mt-2 size-3" />
+      <img src={CrossIcon} alt="cross-icon" className="mt-1.5 size-3" />
 
       <div className="ml-[11px] font-medium text-sm text-[#00051D]/45 leading-5 line-through">
         {optionText}

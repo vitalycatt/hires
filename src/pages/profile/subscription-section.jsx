@@ -75,7 +75,7 @@ export const SubscriptionSection = () => {
               <div className="mr-1.5 font-medium underline">0</div> из 1000
             </div>
 
-            <hr className="w-full mt-4 border border-solid border-[#F0F0F3] opacity-60" />
+            <hr className="w-full mt-4 -border border-solid border-[#F0F0F3] opacity-60" />
 
             <div className="mt-4 flex items-end opacity-60">
               <div className="font-bold text-[35px] text-[#1C2024] leading-10">
@@ -110,7 +110,7 @@ export const SubscriptionSection = () => {
               <div className="mr-1.5 font-medium underline">200</div> из 1000
             </div>
 
-            <hr className="w-full mt-4 border border-solid border-[#F0F0F3]" />
+            <hr className="w-full mt-4 -border border-solid border-[#F0F0F3]" />
 
             <div className="mt-4 flex items-end">
               <div className="font-bold text-[35px] text-[#1C2024] leading-10">

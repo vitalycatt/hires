@@ -30,7 +30,7 @@ export const SearchBar = ({
   return (
     <div
       className={classnames(
-        "flex items-center rounded-lg h-[48px] pl-6 pr-4 p-2 bg-white w-full flex-1 sm:px-3 sm:text-xs",
+        "relative z-10 flex items-center rounded-lg h-[48px] pl-6 pr-4 p-2 bg-white w-full flex-1 sm:px-3 sm:text-xs",
         className
       )}
     >
@@ -38,6 +38,7 @@ export const SearchBar = ({
         <MenuButton
           as={Button}
           variant="ghost"
+          className="font-medium text-sm leading-5 sm:text-xs sm:leading-4 text-[#1C2024]"
           rightIcon={<img src={ChevronDownIcon} alt="chevron-down" />}
         >
           {selectedCategory}
@@ -63,7 +64,7 @@ export const SearchBar = ({
           placeholder="Поиск"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
-          className="border-none focus:ring-0 w-full"
+          className="sm:text-xs sm:leading-4 text-[#60646C] border-none w-full outline-none focus:ring-0"
         />
 
         <InputRightElement
@@ -74,7 +75,7 @@ export const SearchBar = ({
           <img
             src={SearchIcon}
             alt="search-icon"
-            className="py-[3px] sm:pt-0"
+            className="py-[3px] lg:pt-0"
           />
         </InputRightElement>
       </InputGroup>

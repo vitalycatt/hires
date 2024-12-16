@@ -13,7 +13,7 @@ export const ProfileSidebar = ({
   return (
     <div
       className={classnames(
-        "w-[310px] h-[456px] p-[10px] flex flex-col rounded-xl bg-white md:w-full md:h-[514px] md:p-0 md:border md:border-solid md:border-[#F0F0F3]",
+        "min-w-[310px] h-[456px] p-[10px] flex flex-col rounded-xl bg-white md:w-full md:h-[514px] md:p-0 md:border md:border-solid md:border-[#F0F0F3]",
         className,
         { "md:hidden": profileNavigation }
       )}
@@ -24,6 +24,7 @@ export const ProfileSidebar = ({
             key={index}
             url={item.url}
             label={item.label}
+            onClick={() => setProfileNavigation(item.label)}
             profileNavigation={profileNavigation}
             setProfileNavigation={setProfileNavigation}
           />
@@ -38,6 +39,7 @@ export const ProfileSidebar = ({
 export const SidebarItem = ({
   url,
   label,
+  onClick,
   className,
   iconClassName,
   profileNavigation,
@@ -54,7 +56,7 @@ export const SidebarItem = ({
             (!profileNavigation && label === PROFILE_NAVIGATION.PROFILE),
         }
       )}
-      onClick={() => setProfileNavigation(label)}
+      onClick={onClick}
     >
       <div className="flex gap-2">
         <img src={url} alt="windows-icon" />
@@ -73,11 +75,13 @@ export const SidebarItem = ({
         </div>
       </div>
 
-      <img
-        src={ChevronRightIcon}
-        alt="chevron-right"
-        className={classnames("size-4 md:size-6", iconClassName)}
-      />
+      {label !== "Выйти" && (
+        <img
+          src={ChevronRightIcon}
+          alt="chevron-right"
+          className={classnames("size-4 md:size-6", iconClassName)}
+        />
+      )}
     </div>
   );
 };

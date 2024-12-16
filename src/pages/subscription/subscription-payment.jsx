@@ -1,6 +1,7 @@
 import { InvoicePayment } from "./invoice-payment";
 import { PAYMENT_RADIO_GROUP } from "../../constants";
 import {
+  // Cards,
   CardInput,
   AttachPayment,
   PaymentRadioGroup,
@@ -19,11 +20,6 @@ export const SubscriptionPayment = ({ radioGroup, setRadioGroup }) => {
           radioGroup={radioGroup}
           setRadioGroup={setRadioGroup}
         />
-        {/* <Login
-          title='Корзина'
-          loginActiveTab={loginActiveTab}
-          setLoginActiveTab={setLoginActiveTab}
-        /> */}
 
         {radioGroup === PAYMENT_RADIO_GROUP.CARD && (
           <CardInput className="sm:max-w-full" />

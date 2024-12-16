@@ -25,7 +25,7 @@ export const SettingsSection = () => {
         <FormInput label="Почта" url={PencilIcon} />
       </form>
 
-      <hr className="w-full mt-8 border border-solid border-[#D9D9E0]" />
+      <hr className="w-full mt-8 -border border-solid border-[#D9D9E0]" />
 
       <div className="mt-8 flex flex-col">
         <h2 className="font-bold text-[#1C2024] text-[28px] leading-9 -tracking-[0.12px]">
@@ -58,7 +58,7 @@ export const SettingsSection = () => {
         </form>
       </div>
 
-      <hr className="w-full mt-8 border border-solid border-[#D9D9E0]" />
+      <hr className="w-full mt-8 -border border-solid border-[#D9D9E0]" />
 
       <div className="mt-8 flex flex-col">
         <h2 className="font-bold text-[#1C2024] text-[28px] leading-9 -tracking-[0.12px]">
@@ -121,7 +121,7 @@ export const SettingsSection = () => {
         </form>
       </div>
 
-      <hr className="w-full mt-8 border border-solid border-[#D9D9E0]" />
+      <hr className="w-full mt-8 -border border-solid border-[#D9D9E0]" />
 
       <div className="mt-8 flex flex-col">
         <h2 className="font-bold text-[#1C2024] text-[28px] leading-9 -tracking-[0.12px]">

@@ -1,12 +1,12 @@
 import { SidebarItem } from "./profile-sidebar";
 
 import CrossIcon from "../../assets/icons/cross.svg";
+import TBankImage from "../../assets/icons/t-bank.svg";
 import WindowsIcon from "../../assets/icons/windows.svg";
-import TBankImage from "../../assets/images/t-bank.png";
 import PlusBlueIcon from "../../assets/icons/plus-blue.svg";
-import MirGrayImage from "../../assets/images/mir-gray.png";
-import AlfaBankImage from "../../assets/images/alfa-bank.png";
-import SberBankImage from "../../assets/images/sber-bank.png";
+import MirGrayImage from "../../assets/icons/mir-gray.svg";
+import AlfaBankImage from "../../assets/icons/alfa-bank.svg";
+import SberBankImage from "../../assets/icons/sber-bank.svg";
 
 export const PaymentSection = () => {
   return (
@@ -23,7 +23,7 @@ export const PaymentSection = () => {
       </h1>
 
       <ul className="w-full flex-1 mt-8 flex flex-col gap-[13px] sm:hidden">
-        <PaymentItem url={TBankImage} />
+        <PaymentItem url={TBankImage} isFirst={true} />
         <PaymentItem url={SberBankImage} />
         <PaymentItem url={AlfaBankImage} />
         <PaymentItem url={SberBankImage} />
@@ -60,7 +60,7 @@ export const PaymentSection = () => {
   );
 };
 
-const PaymentItem = ({ url }) => {
+const PaymentItem = ({ url, isFirst }) => {
   return (
     <li className="relative w-full p-2 flex flex-col bg-white rounded-xl">
       <div className="flex items-center gap-2">
@@ -78,9 +78,11 @@ const PaymentItem = ({ url }) => {
           <div className="ml-1.5 text-sm text-[#1C2024] leading-5">9345</div>
         </div>
 
-        <div className="h-4 px-[7px] rounded-[3px] border border-solid border-[#C4E8D1] bg-[#D6F1DF] font-medium text-[8px] text-[#218358] leading-4">
-          По умолчанию
-        </div>
+        {isFirst && (
+          <div className="h-4 px-[7px] rounded-[3px] border border-solid border-[#C4E8D1] bg-[#D6F1DF] font-medium text-[8px] text-[#218358] leading-4">
+            По умолчанию
+          </div>
+        )}
       </div>
 
       <div className="mt-5 flex items-center">
@@ -92,9 +94,11 @@ const PaymentItem = ({ url }) => {
           </div>
         </div>
 
-        <div className="ml-[15px] text-[#1C2024] text-xs leading-5 underline cursor-pointer">
-          Сделать картой по умолчанию
-        </div>
+        {!isFirst && (
+          <div className="ml-[15px] text-[#1C2024] text-xs leading-5 underline cursor-pointer">
+            Сделать картой по умолчанию
+          </div>
+        )}
       </div>
 
       <img

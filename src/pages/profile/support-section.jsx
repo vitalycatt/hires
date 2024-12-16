@@ -102,7 +102,7 @@ export const SupportSection = () => {
             <input
               type="text"
               placeholder="Поиск"
-              className="flex-grow text-sm placeholder-[#60646C] text-[#1C2024]"
+              className="flex-grow text-sm placeholder-[#60646C] text-[#1C2024] outline-none focus:ring-0"
             />
 
             {/* Кнопка поиска */}
@@ -268,7 +268,7 @@ const ChatItem = ({ status, date, id }) => {
         </span>
       </div>
 
-      <hr className="mt-4 w-full border border-solid border-[#F0F0F3] group-last:invisible sm:hidden" />
+      <hr className="mt-4 w-full -border border-solid border-[#F0F0F3] group-last:invisible sm:hidden" />
     </div>
   );
 };

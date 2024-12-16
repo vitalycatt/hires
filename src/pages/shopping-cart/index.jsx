@@ -29,10 +29,14 @@ export const ShoppingCart = () => {
         ))}
       </ul>
 
-      <div className="mt-8 flex items-center gap-4">
+      <div className="mt-8 flex items-center gap-4 sm:gap-3 lg:mt-0">
         <div className="text-[#60646C] text-sm">Главная</div>
 
-        <img src={ChevronRightIcon} alt="chevron-right" className="size-4" />
+        <img
+          src={ChevronRightIcon}
+          alt="chevron-right"
+          className="size-4 sm:size-3"
+        />
 
         <div className="font-medium text-[#202020] text-sm">Корзина</div>
       </div>

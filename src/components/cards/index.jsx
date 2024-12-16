@@ -1,11 +1,11 @@
 import classnames from "classnames";
 import { Button } from "../button";
 
-import TBankImage from "../../assets/images/t-bank.png";
+import TBankImage from "../../assets/icons/t-bank.svg";
 import PlusBlueIcon from "../../assets/icons/plus-blue.svg";
-import MirGrayImage from "../../assets/images/mir-gray.png";
-import AlfaBankImage from "../../assets/images/alfa-bank.png";
-import SberBankImage from "../../assets/images/sber-bank.png";
+import MirGrayImage from "../../assets/icons/mir-gray.svg";
+import AlfaBankImage from "../../assets/icons/alfa-bank.svg";
+import SberBankImage from "../../assets/icons/sber-bank.svg";
 
 export const Cards = ({ className }) => {
   return (
@@ -20,7 +20,7 @@ export const Cards = ({ className }) => {
       </h2>
 
       <ul className="mt-4 flex flex-col gap-2">
-        <PaymentItem url={TBankImage} />
+        <PaymentItem url={TBankImage} isFirst={true} />
         <PaymentItem url={SberBankImage} />
         <PaymentItem url={AlfaBankImage} />
       </ul>
@@ -41,7 +41,7 @@ export const Cards = ({ className }) => {
   );
 };
 
-const PaymentItem = ({ url }) => {
+const PaymentItem = ({ url, isFirst }) => {
   return (
     <li className="relative w-full px-[9px] py-[7.5px] flex border border-solid border-[#F0F0F3] bg-white rounded-xl cursor-pointer hover:bg-[#F9F9FB]">
       <div className="h-[43px] w-[68px] flex items-center justify-center border border-solid border-[#F0F0F3] rounded-lg">
@@ -59,9 +59,11 @@ const PaymentItem = ({ url }) => {
           <div className="ml-1.5 text-sm text-[#1C2024] leading-5">9345</div>
         </div>
 
-        <div className="h-4 px-[7px] rounded-[3px] border border-solid border-[#C4E8D1] bg-[#D6F1DF] font-medium text-[8px] text-[#218358] leading-4">
-          По умолчанию
-        </div>
+        {isFirst && (
+          <div className="h-4 px-[7px] rounded-[3px] border border-solid border-[#C4E8D1] bg-[#D6F1DF] font-medium text-[8px] text-[#218358] leading-4">
+            По умолчанию
+          </div>
+        )}
       </div>
 
       <img

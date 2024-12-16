@@ -14,7 +14,7 @@ export const FormSwitch = ({ label, className, toggle, setToggle }) => {
         checked={toggle}
         onCheckedChange={() => setToggle((toggle) => !toggle)}
       >
-        <Switch.Thumb className="block size-[22px] border border-solid border-[#3954b0] translate-x-0.5 rounded-full bg-white transition-transform duration-100 will-change-transform data-[state=checked]:translate-x-[19px]" />
+        <Switch.Thumb className="block size-[21.5px] translate-x-[1.5px] rounded-full bg-white transition-transform duration-100 will-change-transform data-[state=checked]:translate-x-[18.5px]" />
       </Switch.Root>
 
       {label && (

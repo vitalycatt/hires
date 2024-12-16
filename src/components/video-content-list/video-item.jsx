@@ -4,15 +4,15 @@ import { OverlayButton } from "../overlay-button";
 import { useState, useRef } from "react";
 
 import HeartIcon from "../../assets/icons/heart.svg";
-import HeartBlackIcon from "../../assets/icons/heart-black.svg";
 import ShareIcon from "../../assets/icons/share.svg";
-import ShareBlackIcon from "../../assets/icons/share-black.svg";
 import DisplayIcon from "../../assets/icons/display.svg";
-import DisplayBlackIcon from "../../assets/icons/display-black.svg";
 import BookmarkIcon from "../../assets/icons/bookmark.svg";
-import BookmarkBlackIcon from "../../assets/icons/bookmark-black.svg";
+import HeartBlackIcon from "../../assets/icons/heart-black.svg";
+import ShareBlackIcon from "../../assets/icons/share-black.svg";
 import ShopingCartIcon from "../../assets/icons/shoping-cart.svg";
 import HorizontalVideo from "../../assets/horizontal-video.mp4";
+import DisplayBlackIcon from "../../assets/icons/display-black.svg";
+import BookmarkBlackIcon from "../../assets/icons/bookmark-black.svg";
 
 export const VideoItem = ({ item, className }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -32,14 +32,14 @@ export const VideoItem = ({ item, className }) => {
   return (
     <li
       className={classnames(
-        "relative group w-full rounded-xl transform transition-transform duration-200 ease-in-out list-none",
+        "relative group h-full w-full rounded-xl transform transition-transform duration-200 ease-in-out list-none",
         className
       )}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       {/* VIDEO */}
-      <div className="w-full">
+      <div className="h-full w-full">
         <ReactPlayer
           ref={playerRef}
           url={HorizontalVideo}

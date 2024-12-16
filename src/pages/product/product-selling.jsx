@@ -74,7 +74,7 @@ export const ProductSelling = () => {
         <ProductItem label="4K" />
       </ul>
 
-      <hr className="w-full mt-4 border-solid border border-[#F0F0F3] sm:hidden" />
+      <hr className="w-full mt-4 border-solid -border border-[#F0F0F3] sm:hidden" />
 
       <div className="mt-4 flex justify-between items-center gap-3 sm:mt-6">
         <ProductControls buttonUrl={UploadBlackIcon} title="Скачать превью" />

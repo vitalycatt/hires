@@ -7,6 +7,8 @@ import { ImageSearchDialog } from "../../components/search-bar/image-search-dial
 import User from "../../components/header/User";
 import ButtonIcon from "../../components/header/ButtonIcon";
 
+import BurgerIcon from "../../assets/icons/burger.svg";
+
 const categories = ["Видео", "Изображения", "Документы", "Аудио"];
 const cartProducts = ["Видео", "Изображения", "Документы", "Аудио"];
 
@@ -22,11 +24,16 @@ export const Header = () => {
   };
 
   return (
-    <div className="container mx-auto h-[110px] p-10 flex items-center justify-between sm:flex-col sm:h-[190px]">
+    <div className="container mx-auto px-10 pt-[30px] pb-6 flex items-center justify-between sm:flex-col sm:px-5 sm:pt-5 sm:pb-8">
       <div className="w-full flex items-center justify-between">
         <img
+          src={BurgerIcon}
+          alt="burder-icon"
+          className="hidden mr-[11px] sm:block"
+        />
+        <img
           src="../../images/logo-black.svg"
-          alt="logo black"
+          alt="logo-icon"
           className="mr-[26px]"
         />
 

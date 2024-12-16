@@ -3,6 +3,7 @@ import { Tags } from "./tags";
 import { Content } from "./content";
 import { useState } from "react";
 import { VideoPlayer } from "../../components";
+import { CONTENT_TYPE } from "../../constants";
 import { ProductSelling } from "./product-selling";
 import { ProductDescription } from "./product-description";
 import { descriptionDetails, reelData, tags, videoData } from "../../data";
@@ -10,7 +11,6 @@ import { descriptionDetails, reelData, tags, videoData } from "../../data";
 import PlayerVideo from "../../assets/horizontal-video.mp4";
 import ChevronDownIcon from "../../assets/icons/chevron-down.svg";
 import ChevronLeftIcon from "../../assets/icons/chevron-left.svg";
-import { CONTENT_TYPE } from "../../constants";
 
 export const Product = () => {
   const [openDescription, setOpenDescription] = useState(false);
@@ -57,7 +57,7 @@ export const Product = () => {
         <ProductSelling />
       </div>
 
-      <hr className="w-full mt-6 border-solid border border-[#F0F0F3] sm:hidden" />
+      <hr className="w-full mt-6 border-solid -border border-[#F0F0F3] sm:hidden" />
 
       <Tags tags={tags} className="hidden mt-8 sm:flex" />
 

@@ -10,7 +10,7 @@ import {
 export const SortedSelect = ({ options }) => (
   <Select.Root>
     <Select.Trigger
-      className="inline-flex h-[35px] items-center justify-center gap-[5px] rounded px-[15px] text-[13px] leading-none font-normal"
+      className="inline-flex h-[35px] items-center justify-center gap-[5px] rounded px-[15px] text-[13px] leading-none font-normal outline-none"
       aria-label="Food"
     >
       <Select.Value
