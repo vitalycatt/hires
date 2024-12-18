@@ -76,7 +76,8 @@ export const SidebarItem = ({
         </div>
       </div>
 
-      {label !== PROFILE_NAVIGATION.EXIT && label === profileNavigation && (
+      {((label !== PROFILE_NAVIGATION.EXIT && label === profileNavigation) ||
+        (!profileNavigation && label === PROFILE_NAVIGATION.PROFILE)) && (
         <img
           src={ChevronRightIcon}
           alt="chevron-right"
