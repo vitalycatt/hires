@@ -67,8 +67,7 @@ export const SidebarItem = ({
               "font-medium text-[#1F2D5C] md:font-normal md:text-[#1C2024]":
                 profileNavigation === label ||
                 (!profileNavigation && label === PROFILE_NAVIGATION.PROFILE),
-              "!text-[#80838D]":
-                label === PROFILE_NAVIGATION.EXIT || !profileNavigation,
+              "!text-[#80838D]": label === PROFILE_NAVIGATION.EXIT,
             }
           )}
         >
