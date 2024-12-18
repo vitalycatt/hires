@@ -4,8 +4,8 @@ import ReactPlayer from "react-player";
 import PlayIcon from "../../assets/icons/play.svg";
 import PauseIcon from "../../assets/icons/pause.svg";
 import CornersIcon from "../../assets/icons/corners.svg";
-import VolumeWhiteIcon from "../../assets/icons/speaker-loud-white.svg";
 import VolumeOffIcon from "../../assets/icons/speaker-off-white.svg";
+import VolumeWhiteIcon from "../../assets/icons/speaker-loud-white.svg";
 
 export const VideoPlayer = ({ url }) => {
   const [isMuted, setIsMuted] = useState(false);
@@ -33,10 +33,6 @@ export const VideoPlayer = ({ url }) => {
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
     return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
-  };
-
-  const toggleMute = () => {
-    setIsMuted(!isMuted);
   };
 
   return (
@@ -86,8 +82,14 @@ export const VideoPlayer = ({ url }) => {
           </div>
 
           <div className="flex items-center gap-3">
-            <button onClick={toggleMute} className="text-white">
-              <img src={isMuted ? VolumeOffIcon : VolumeWhiteIcon } alt="volume-icon" />
+            <button
+              onClick={() => setIsMuted((prev) => !prev)}
+              className="text-white"
+            >
+              <img
+                src={isMuted ? VolumeOffIcon : VolumeWhiteIcon}
+                alt="volume-icon"
+              />
             </button>
 
             <button className="text-white">
