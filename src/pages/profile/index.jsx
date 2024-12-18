@@ -5,7 +5,6 @@ import { PaymentSection } from "./payment-section";
 import { SettingsSection } from "./settings-section";
 import { PROFILE_NAVIGATION } from "../../constants";
 import { SubscriptionSection } from "./subscription-section";
-import { contentNavigationData } from "../../data";
 import { ProfileInfo, ProfileSection } from "./profile-section";
 
 import ChevronRightIcon from "../../assets/icons/chevron-right.svg";

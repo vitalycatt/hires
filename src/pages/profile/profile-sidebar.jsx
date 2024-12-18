@@ -43,7 +43,6 @@ export const SidebarItem = ({
   className,
   iconClassName,
   profileNavigation,
-  setProfileNavigation,
 }) => {
   return (
     <div
@@ -68,6 +67,8 @@ export const SidebarItem = ({
               "font-medium text-[#1F2D5C] md:font-normal md:text-[#1C2024]":
                 profileNavigation === label ||
                 (!profileNavigation && label === PROFILE_NAVIGATION.PROFILE),
+              "!text-[#80838D]":
+                label === PROFILE_NAVIGATION.EXIT || !profileNavigation,
             }
           )}
         >
@@ -75,11 +76,13 @@ export const SidebarItem = ({
         </div>
       </div>
 
-      {label !== "Выйти" && (
+      {label !== PROFILE_NAVIGATION.EXIT && label === profileNavigation && (
         <img
           src={ChevronRightIcon}
           alt="chevron-right"
-          className={classnames("size-4 md:size-6", iconClassName)}
+          className={classnames("size-4 md:size-6", {
+            iconClassName,
+          })}
         />
       )}
     </div>

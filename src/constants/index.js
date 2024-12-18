@@ -48,6 +48,7 @@ export const PROFILE_NAVIGATION = {
   PAYMENT: "Платежные данные",
   SETTINGS: "Настройки",
   SUPPORT: "Поддержка",
+  EXIT: "Выйти",
 };
 
 export const SIGNUP_USERS = {

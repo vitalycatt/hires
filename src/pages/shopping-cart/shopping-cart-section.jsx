@@ -1,6 +1,6 @@
 import classnames from "classnames";
 import { useState } from "react";
-import { ShoppingCartList } from "./shopping-cart-list";
+// import { ShoppingCartList } from "./shopping-cart-list";
 import {
   LOGIN_ACTIVE_TAB,
   PAYMENT_RADIO_GROUP,
@@ -53,7 +53,6 @@ export const ShoppingCartSection = ({ radioGroup, setRadioGroup }) => {
       {!auth ? (
         <div className="mt-10 mb-[64px] w-full flex justify-between gap-4">
           <Login
-            auth={auth}
             setAuth={setAuth}
             loginActiveTab={loginActiveTab}
             setLoginActiveTab={setLoginActiveTab}

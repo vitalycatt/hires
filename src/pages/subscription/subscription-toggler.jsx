@@ -32,7 +32,7 @@ export const SubscriptionToggler = ({ toggle, setToggle }) => {
         * В годовой подписке предоставляется скидка 50%, а также возможность
         скачивать материалы, не входящих в подписку, со скидкой 10%.
       </div>
-      <div className="max-w-[324px] w-full mt-3 text-sm leading-5 text-[#000714]/60 sm:mt-4 sm:text-sm sm:leading-5 sm:block">
+      <div className="hidden max-w-[324px] w-full mt-3 text-sm leading-5 text-[#000714]/60 sm:mt-4 sm:text-sm sm:leading-5 sm:block">
         * В годовой подписке предоставляется скидка 50%, а также возможность
         скачивать материалы, не входящих в подписку,
         <br /> со скидкой 10%.

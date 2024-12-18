@@ -122,7 +122,7 @@ export const Login = ({
                           SIGNUP_USERS.INDIVIDUAL !== signUpRadioGroup,
                       }
                     )}
-                    value="Физическое лицо"
+                    value={SIGNUP_USERS.INDIVIDUAL}
                     id="r1"
                   >
                     <RadioGroup.Indicator
@@ -137,7 +137,7 @@ export const Login = ({
                   </RadioGroup.Item>
 
                   <label
-                    className="ml-1 font-medium text-sm leading-5 text-[#1C2024]"
+                    className="ml-1 text-sm leading-5 text-[#00051D]/50"
                     htmlFor="r1"
                   >
                     Физическое лицо
@@ -153,7 +153,7 @@ export const Login = ({
                           SIGNUP_USERS.LEGAL_ENTITY !== signUpRadioGroup,
                       }
                     )}
-                    value="Юридическое лицо"
+                    value={SIGNUP_USERS.LEGAL_ENTITY}
                     id="r2"
                   >
                     <RadioGroup.Indicator
@@ -168,7 +168,7 @@ export const Login = ({
                   </RadioGroup.Item>
 
                   <label
-                    className="ml-1 font-medium text-sm leading-5 text-[#1C2024]"
+                    className="ml-1 text-sm leading-5 text-[#00051D]/50"
                     htmlFor="r2"
                   >
                     Юридическое лицо
@@ -330,7 +330,7 @@ export const MobileLogin = ({
                           SIGNUP_USERS.INDIVIDUAL !== signUpRadioGroup,
                       }
                     )}
-                    value="Физическое лицо"
+                    value={SIGNUP_USERS.INDIVIDUAL}
                     id="r1"
                   >
                     <RadioGroup.Indicator
@@ -345,7 +345,7 @@ export const MobileLogin = ({
                   </RadioGroup.Item>
 
                   <label
-                    className="ml-1 font-medium text-sm leading-5 text-[#1C2024]"
+                    className="ml-1 text-sm leading-5 text-[#00051D]/50"
                     htmlFor="r1"
                   >
                     Физическое лицо
@@ -361,7 +361,7 @@ export const MobileLogin = ({
                           SIGNUP_USERS.LEGAL_ENTITY !== signUpRadioGroup,
                       }
                     )}
-                    value="Юридическое лицо"
+                    value={SIGNUP_USERS.LEGAL_ENTITY}
                     id="r2"
                   >
                     <RadioGroup.Indicator
@@ -376,7 +376,7 @@ export const MobileLogin = ({
                   </RadioGroup.Item>
 
                   <label
-                    className="ml-1 font-medium text-sm leading-5 text-[#1C2024]"
+                    className="ml-1 text-sm leading-5 text-[#00051D]/50"
                     htmlFor="r2"
                   >
                     Юридическое лицо
