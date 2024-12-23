@@ -42,9 +42,9 @@ export const CartDialog = ({ cartProducts }) => (
     </Dialog.Trigger>
 
     <Dialog.Portal>
-      <Dialog.Overlay className="fixed inset-0 bg-[#1C2024]/50" />
+      <Dialog.Overlay className="fixed z-20 inset-0 bg-[#1C2024]/50" />
 
-      <Dialog.Content className="fixed left-1/2 top-1/2 max-h-[85vh] w-[90vw] max-w-[594px] p-5 pt-[33px] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-[#F9F9FB] focus:outline-none data-[state=open]:animate-contentShow">
+      <Dialog.Content className="fixed z-20 left-1/2 top-1/2 max-h-[85vh] w-[90vw] max-w-[594px] p-5 pt-[33px] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-[#F9F9FB] focus:outline-none data-[state=open]:animate-contentShow">
         <Dialog.Title className="flex justify-between items-center">
           <h3 className="font-medium text-xl text-[#1C2024]">
             Добавлено в корзину

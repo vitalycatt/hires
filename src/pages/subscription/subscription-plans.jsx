@@ -195,7 +195,7 @@ const YearPlan = ({ url, title, materialPrice, saleMaterialPrice, price }) => {
   return (
     <li
       className={classnames(
-        "relative max-w-[310px] w-full p-6 flex flex-col bg-[#FDFDFE] border border-solid border-[#F0F0F3] rounded-2xl hover:border-[#ABBDF9] sm:max-w-full sm:mt-4 sm:first:mt-0",
+        "relative max-w-[310px] w-full p-6 flex flex-col bg-[#FDFDFE] border border-solid border-[#F0F0F3] rounded-2xl sm:max-w-full sm:mt-4 sm:first:mt-0",
         {
           "bg-gradient-to-b from-[#D2DEFF]/60 via-[#ABC2FF]/60 to-[#7B9EFF]/70 border-dashed border-[#ABBDF9]":
             PLAN_TYPE.MULTI === title,
