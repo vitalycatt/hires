@@ -25,9 +25,9 @@ export const InvoicePayment = ({ className }) => {
         </Dialog.Trigger>
 
         <Dialog.Portal>
-          <Dialog.Overlay className="fixed inset-0 bg-black/40 data-[state=open]:animate-overlayShow" />
+          <Dialog.Overlay className="fixed z-20 inset-0 bg-black/40 data-[state=open]:animate-overlayShow" />
 
-          <Dialog.Content className="fixed left-1/2 top-1/2 max-h-[85vh] w-[90vw] max-w-[400px] -translate-x-1/2 -translate-y-1/2 shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none data-[state=open]:animate-contentShow">
+          <Dialog.Content className="fixed z-20 left-1/2 top-1/2 max-h-[85vh] w-[90vw] max-w-[400px] -translate-x-1/2 -translate-y-1/2 shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none data-[state=open]:animate-contentShow">
             <div className="min-w-[400px] p-5 pt-10 flex flex-col rounded-xl bg-white">
               <h1 className="font-medium text-[#1C2024] text-[20px] leading-7 -tracking-[0.16px]">
                 Оплата по счету
